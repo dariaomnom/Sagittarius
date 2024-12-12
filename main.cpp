@@ -6,12 +6,13 @@
 #define WIN_H 1000
 
 const int dim = 3;
+const double PI = 3.14159265358979323846;
 const double RAD_TO_ARCSECONDS = 206264.8;
 const double GMBH = 6.743015e-11 * 1.988416e30 * 4.15e6;	// G * black hole mass
 const double RBH = 8.53e3 * 206265 * 1.495978707e11;
 const double C = 299792458.0;
 const double Y = 31558149.0;			// sideric period
-const double T = Y * 20;		
+const double T = Y * 2024;
 const double step = Y / 1000.0;
 double const min_h = Y / 1000000.0;
 const int N = 1;
@@ -59,24 +60,24 @@ double scalar(double* a, double* b) {
 }
 
 void calculateEquatorialCoordinates(double x, double y, double z, double* result) {
-	// Р’С‹С‡РёСЃР»СЏРµРј РїСЂСЏРјРѕРµ РІРѕСЃС…РѕР¶РґРµРЅРёРµ (alpha) РІ СЂР°РґРёР°РЅР°С…
-	double alpha = atan2(y, x); // atan2 СѓС‡РёС‚С‹РІР°РµС‚ Р·РЅР°РєРё x Рё y
-	
-	// Р’С‹С‡РёСЃР»СЏРµРј СЃРєР»РѕРЅРµРЅРёРµ (delta) РІ СЂР°РґРёР°РЅР°С…
-	double r = sqrt(x * x + y * y + z * z); // СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РЅР°С‡Р°Р»Р° РєРѕРѕСЂРґРёРЅР°С‚
-	double delta = asin(z / r); // СЃРєР»РѕРЅРµРЅРёРµ = arcsin(z / r)
-	
-	// РџСЂРµРѕР±СЂР°Р·СѓРµРј СЂРµР·СѓР»СЊС‚Р°С‚С‹ РёР· СЂР°РґРёР°РЅ РІ СЃРµРєСѓРЅРґС‹ РґСѓРіРё
-	result[0] = alpha * RAD_TO_ARCSECONDS; // РџСЂСЏРјРѕРµ РІРѕСЃС…РѕР¶РґРµРЅРёРµ РІ СЃРµРєСѓРЅРґР°С… РґСѓРіРё
-	result[1] = delta * RAD_TO_ARCSECONDS; // РЎРєР»РѕРЅРµРЅРёРµ РІ СЃРµРєСѓРЅРґР°С… РґСѓРіРё
+	// Вычисляем прямое восхождение (alpha) в радианах
+	double alpha = atan2(y, x); // atan2 учитывает знаки x и y
+
+	// Вычисляем склонение (delta) в радианах
+	double r = sqrt(x * x + y * y + z * z); // расстояние от начала координат
+	double delta = asin(z / r); // склонение = arcsin(z / r)
+
+	// Преобразуем результаты из радиан в секунды дуги
+	result[0] = alpha * RAD_TO_ARCSECONDS; // Прямое восхождение в секундах дуги
+	result[1] = delta * RAD_TO_ARCSECONDS; // Склонение в секундах дуги
 }
 
 void calculateCartesianCoordinates(double alpha_arcseconds, double delta_arcseconds, double r, double* result) {
-	// РџРµСЂРµРІРѕРґРёРј РїСЂСЏРјРѕРµ РІРѕСЃС…РѕР¶РґРµРЅРёРµ Рё СЃРєР»РѕРЅРµРЅРёРµ РёР· Р°СЂРєР°СЃРµРєСѓРЅРґ РІ СЂР°РґРёР°РЅС‹
+	// Переводим прямое восхождение и склонение из аркасекунд в радианы
 	double alpha = alpha_arcseconds / RAD_TO_ARCSECONDS;
 	double delta = delta_arcseconds / RAD_TO_ARCSECONDS;
 
-	// Р’С‹С‡РёСЃР»СЏРµРј РґРµРєР°СЂС‚РѕРІС‹ РєРѕРѕСЂРґРёРЅР°С‚С‹
+	// Вычисляем декартовы координаты
 	result[0] = r * cos(delta) * cos(alpha); // x
 	result[1] = r * cos(delta) * sin(alpha); // y
 	result[2] = r * sin(delta);              // z
@@ -95,7 +96,7 @@ void multiplyMatrixVector(const double matrix[9], double vector[3]) {
 	vector[2] = result[2];
 }
 
-void multiplyMatrixMatrix(double matrix1[9], const double matrix2[9]) {
+void multiplyMatrixMatrix(double matrix1[9], double matrix2[9]) {
 	double result[9];
 	for (int i = 0; i < 3; ++i) {
 		for (int j = 0; j < 3; ++j) {
@@ -106,8 +107,23 @@ void multiplyMatrixMatrix(double matrix1[9], const double matrix2[9]) {
 		}
 	}
 	for (int i = 0; i < 9; ++i) {
-		matrix1[i] = result[i];
+		matrix2[i] = result[i];
 	}
+}
+
+void transpose(double matrix[9]) {
+	double buffer;
+	buffer = matrix[1];
+	matrix[1] = matrix[3];
+	matrix[3] = buffer;
+
+	buffer = matrix[2];
+	matrix[2] = matrix[6];
+	matrix[6] = buffer;
+
+	buffer = matrix[5];
+	matrix[5] = matrix[7];
+	matrix[7] = buffer;
 }
 
 int main()
@@ -122,34 +138,71 @@ int main()
 	double k2[dim * N * 2];
 	double k3[dim * N * 2];
 	double k4[dim * N * 2];
-	double EqCoords[2] = {0, 0};				// Р‘СѓС„РµСЂ РґР»СЏ РєРѕРѕСЂРґРёРЅР°С‚ Р·РІРµР·РґС‹
-	double EqCoordsBH[2] = {959100.7014, -104377.4682};	// R.A., Decl in arcsec
-	double BH[3] = {0, 0, 0}; 				// Р”РµРєР°СЂС‚РѕРІС‹ РєРѕРѕСЂРґРёРЅР°С‚С‹ Р§Р”
+	double EqCoords[2] = { 0, 0 };				// Буфер для координат звезды
+	double EqCoordsBH[2] = { 959100.7014, -104377.4682 };	// R.A., Decl in arcsec
+	double BH[3] = { 0, 0, 0 }; 				// Декартовы координаты ЧД
+	double RotateMatrix1[9] = {					
+		0, 0, 1,
+		0, 1, 0,
+		-1, 0, 0
+	};
+	double RotateMatrix2[9] = {
+		1, 0, 0,
+		0, std::cos(-959100.7014 / RAD_TO_ARCSECONDS), -std::sin(-959100.7014 / RAD_TO_ARCSECONDS),
+		0, std::sin(-959100.7014 / RAD_TO_ARCSECONDS), std::cos(-959100.7014 / RAD_TO_ARCSECONDS)
+	};
+	double RotateMatrix3[9] = {
+		std::cos(104377.4682 / RAD_TO_ARCSECONDS), 0, std::sin(104377.4682 / RAD_TO_ARCSECONDS),
+		0, 1, 0,
+		-std::sin(104377.4682 / RAD_TO_ARCSECONDS), 0, std::cos(104377.4682 / RAD_TO_ARCSECONDS)
+	};
 
-	calculateCartesianCoordinates(EqCoordsBH[0], EqCoordsBH[1], RBH, BH);   // Р Р°СЃС‡РµС‚ РґРµРєР°СЂС‚РѕРІС‹С… РєРѕРѕСЂРґРёРЅР°С‚ РёР· СЌРєРІР°С‚РѕСЂРёР°Р»СЊРЅС‹С…, Р·Р°РїРёСЃС‹РІР°СЋС‚СЃСЏ РІ РјР°СЃСЃРёРІ BH
+	/*double RotateMatrix1[9] = {					
+		std::cos(959100.7014 / RAD_TO_ARCSECONDS), -std::sin(959100.7014 / RAD_TO_ARCSECONDS), 0,
+		std::sin(959100.7014 / RAD_TO_ARCSECONDS), std::cos(959100.7014 / RAD_TO_ARCSECONDS), 0,
+		0, 0, 1
+	};
+	double RotateMatrix2[9] = {
+		std::cos(PI / 2 + 104377.4682 / RAD_TO_ARCSECONDS), 0, std::sin(PI / 2 + 104377.4682 / RAD_TO_ARCSECONDS),
+		0, 1, 0,
+		-std::sin(PI / 2 + 104377.4682 / RAD_TO_ARCSECONDS), 0, std::cos(PI / 2 + 104377.4682 / RAD_TO_ARCSECONDS)
+	};
+	double RotateMatrix3[9] = {
+	0, 1, 0,
+	-1, 0, 0,
+	0, 0, 1
+	};*/
+
+	multiplyMatrixMatrix(RotateMatrix2, RotateMatrix1);
+	multiplyMatrixMatrix(RotateMatrix3, RotateMatrix1);
+	//transpose(RotateMatrix1);
+
+	calculateCartesianCoordinates(EqCoordsBH[0], EqCoordsBH[1], RBH, BH);   // Расчет декартовых координат из экваториальных, записываются в массив BH
 
 
-	X[0] = -13946410030007.033;		// РљРѕРѕСЂРґРёРЅР°С‚С‹ S2
-	X[1] = 2625500133928.027;		// РњРѕРјРµРЅС‚ РїСЂРѕС…РѕР¶РґРµРЅРёСЏ РїРµСЂРёС†РµРЅС‚СЂР° T_P = 2002.32
+	X[0] = -13946410030007.033;		// Координаты S2
+	X[1] = 2625500133928.027;		// Момент прохождения перицентра T_P = 2002.32
 	X[2] = 12102295968349.293;
+	multiplyMatrixVector(RotateMatrix1, X);
 
-	X[3] = 2689819.2541161072;		// РЎРєРѕСЂРѕСЃС‚СЊ S2
+	X[3] = 2689819.2541161072;		// Скорость S2
 	X[4] = 6762698.965156819;
 	X[5] = 1632570.8144508821;
+	multiplyMatrixVector(RotateMatrix1, X + 3);
 
 
 	FILE* fp_S2 = fopen("S2.txt", "w");
 	FILE* fp_S2_Eq = fopen("S2_Equatorial.txt", "w");
-	t = 2002.32 * Y;			// РњРѕРјРµРЅС‚ РІСЂРµРјРµРЅРё СЃС‚Р°СЂС‚Р° РѕС‚СЃС‡РµС‚Р°
-	while (t < t + T)
+	t = 2002.32 * Y;			// Момент времени старта отсчета
+	while (t < T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
-		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords); 				// Р’С‹С‡РёСЃР»РµРЅРёРµ СЌРєРІР°С‚РѕСЂРёР°Р»СЊРЅС‹С… РєРѕРѕСЂРґРёРЅР°С‚. X - РєРѕРѕСЂРґРёРЅР°С‚С‹ Р·РІРµР·РґС‹ РІ СЃРёСЃС‚РµРјРµ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ Р§Р”
+		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords); 				// Вычисление экваториальных координат. X - координаты звезды в системе относительно ЧД
 
-		fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);		// Р’ С„Р°Р№Р»: СЂР°Р·РЅРёС†Р° РјРµР¶РґСѓ СЌРєРІ. РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё Р§Р” Рё Р—РІРµР·РґС‹
-		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);						// Р’ С„Р°Р№Р»: РґР°С‚Р°, РґРµРєР°СЂС‚РѕРІС‹ РєРѕРѕСЂРґРёРЅР°С‚С‹ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ Р§Р”
+		fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);		// В файл: разница между экв. координатами ЧД и Звезды
+		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);						// В файл: дата, декартовы координаты относительно ЧД
 	}
 	fclose(fp_S2);
 	fclose(fp_S2_Eq);
@@ -157,22 +210,24 @@ int main()
 	X[0] = 3447941175082.65;		// S38
 	X[1] = 32238372168557.91;		// T_P = 2003.30
 	X[2] = 2444612226178.7485;
+	multiplyMatrixVector(RotateMatrix1, X);
 
 	X[3] = 5364230.710015342;
 	X[4] = -668821.2436060756;
 	X[5] = 1254250.5494617736;
+	multiplyMatrixVector(RotateMatrix1, X + 3);
 
 	FILE* fp_S38 = fopen("S38.txt", "w");
 	FILE* fp_S38_Eq = fopen("S38_Equatorial.txt", "w");
 	t = 2003.30 * Y;
-	while (t < t + T)
+	while (t < T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
 
-		fprintf(fp_S38_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);
+		fprintf(fp_S38_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
 		fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
 	}
 	fclose(fp_S38);
@@ -181,22 +236,24 @@ int main()
 	X[0] = 31761187579458.13;		// S55
 	X[1] = -5892249309894.6;		// T_P = 2009.31
 	X[2] = 16258234200748.242;
+	multiplyMatrixVector(RotateMatrix1, X);
 
 	X[3] = 261842.9021437616;
 	X[4] = -4648431.32900279;
 	X[5] = -2196189.166724118;
+	multiplyMatrixVector(RotateMatrix1, X + 3);
 
 	FILE* fp_S55 = fopen("S55.txt", "w");
 	FILE* fp_S55_Eq = fopen("S55_Equatorial.txt", "w");
 	t = 2009.31 * Y;
-	while (t < t + T)
+	while (t < T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
 
-		fprintf(fp_S55_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);
+		fprintf(fp_S55_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
 		fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
 	}
 	fclose(fp_S55);
