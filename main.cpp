@@ -59,24 +59,24 @@ double scalar(double* a, double* b) {
 }
 
 void calculateEquatorialCoordinates(double x, double y, double z, double* result) {
-	// Âû÷èñëÿåì ïðÿìîå âîñõîæäåíèå (alpha) â ðàäèàíàõ
-	double alpha = atan2(y, x); // atan2 ó÷èòûâàåò çíàêè x è y
-
-	// Âû÷èñëÿåì ñêëîíåíèå (delta) â ðàäèàíàõ
-	double r = sqrt(x * x + y * y + z * z); // ðàññòîÿíèå îò íà÷àëà êîîðäèíàò
-	double delta = asin(z / r); // ñêëîíåíèå = arcsin(z / r)
-
-	// Ïðåîáðàçóåì ðåçóëüòàòû èç ðàäèàí â ñåêóíäû äóãè
-	result[0] = alpha * RAD_TO_ARCSECONDS; // Ïðÿìîå âîñõîæäåíèå â ñåêóíäàõ äóãè
-	result[1] = delta * RAD_TO_ARCSECONDS; // Ñêëîíåíèå â ñåêóíäàõ äóãè
+	// Вычисляем прямое восхождение (alpha) в радианах
+	double alpha = atan2(y, x); // atan2 учитывает знаки x и y
+	
+	// Вычисляем склонение (delta) в радианах
+	double r = sqrt(x * x + y * y + z * z); // расстояние от начала координат
+	double delta = asin(z / r); // склонение = arcsin(z / r)
+	
+	// Преобразуем результаты из радиан в секунды дуги
+	result[0] = alpha * RAD_TO_ARCSECONDS; // Прямое восхождение в секундах дуги
+	result[1] = delta * RAD_TO_ARCSECONDS; // Склонение в секундах дуги
 }
 
 void calculateCartesianCoordinates(double alpha_arcseconds, double delta_arcseconds, double r, double* result) {
-	// Ïåðåâîäèì ïðÿìîå âîñõîæäåíèå è ñêëîíåíèå èç àðêàñåêóíä â ðàäèàíû
+	// Переводим прямое восхождение и склонение из аркасекунд в радианы
 	double alpha = alpha_arcseconds / RAD_TO_ARCSECONDS;
 	double delta = delta_arcseconds / RAD_TO_ARCSECONDS;
 
-	// Âû÷èñëÿåì äåêàðòîâû êîîðäèíàòû
+	// Вычисляем декартовы координаты
 	result[0] = r * cos(delta) * cos(alpha); // x
 	result[1] = r * cos(delta) * sin(alpha); // y
 	result[2] = r * sin(delta);              // z
@@ -95,11 +95,11 @@ int main()
 	double k2[dim * N * 2];
 	double k3[dim * N * 2];
 	double k4[dim * N * 2];
-	double EqCoords[2] = {0, 0};	// Буфер для координат звезды
-	double EqCoordsBH[2] = {959100.7014, -104377.4682};		// R.A., Decl in arcsec
-	double BH[3] = {0, 0, 0}; // Декартовы координаты ЧД
+	double EqCoords[2] = {0, 0};				// Буфер для координат звезды
+	double EqCoordsBH[2] = {959100.7014, -104377.4682};	// R.A., Decl in arcsec
+	double BH[3] = {0, 0, 0}; 				// Декартовы координаты ЧД
 
-	calculateCartesianCoordinates(EqCoordsBH[0], EqCoordsBH[1], RBH, BH); // Расчет декартовых координат из экваториальных, записываются в массив BH
+	calculateCartesianCoordinates(EqCoordsBH[0], EqCoordsBH[1], RBH, BH);   // Расчет декартовых координат из экваториальных, записываются в массив BH
 
 
 	X[0] = -13946410030007.033;		// Координаты S2
@@ -113,16 +113,16 @@ int main()
 
 	FILE* fp_S2 = fopen("S2.txt", "w");
 	FILE* fp_S2_Eq = fopen("S2_Equatorial.txt", "w");
-	t = 2002.32 * Y;		// Момент времени старта отсчета
+	t = 2002.32 * Y;			// Момент времени старта отсчета
 	while (t < t + T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
-		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords); // Вычисление экваториальных координат. X - координаты звезды в системе относительно ЧД
+		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords); 				// Вычисление экваториальных координат. X - координаты звезды в системе относительно ЧД
 
 		fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);		// В файл: разница между экв. координатами ЧД и Звезды
-		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);		// В файл: дата, декартовы координаты относительно ЧД
+		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);						// В файл: дата, декартовы координаты относительно ЧД
 	}
 	fclose(fp_S2);
 	fclose(fp_S2_Eq);
