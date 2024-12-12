@@ -83,31 +83,31 @@ void calculateCartesianCoordinates(double alpha_arcseconds, double delta_arcseco
 }
 
 void multiplyMatrixVector(const double matrix[9], double vector[3]) {
-  double result[3];
-  for (int i = 0; i < 3; ++i) {
-    result[i] = 0;
-    for (int j = 0; j < 3; ++j) {
-      result[i] += matrix[i * 3 + j] * vector[j];
-    }
-  }
-  vector[0] = result[0];
-  vector[1] = result[1];
-  vector[2] = result[2];
+	double result[3];
+	for (int i = 0; i < 3; ++i) {
+		result[i] = 0;
+		for (int j = 0; j < 3; ++j) {
+			result[i] += matrix[i * 3 + j] * vector[j];
+		}
+	}
+	vector[0] = result[0];
+	vector[1] = result[1];
+	vector[2] = result[2];
 }
 
 void multiplyMatrixMatrix(double matrix1[9], const double matrix2[9]) {
-  double result[9];
-  for (int i = 0; i < 3; ++i) {
-    for (int j = 0; j < 3; ++j) {
-      result[i * 3 + j] = 0;
-      for (int k = 0; k < 3; ++k) {
-        result[i * 3 + j] += matrix1[i * 3 + k] * matrix2[k * 3 + j];
-      }
-    }
-  }
-  for (int i = 0; i < 9; ++i) {
-    matrix1[i] = result[i];
-  }
+	double result[9];
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 3; ++j) {
+			result[i * 3 + j] = 0;
+			for (int k = 0; k < 3; ++k) {
+				result[i * 3 + j] += matrix1[i * 3 + k] * matrix2[k * 3 + j];
+			}
+		}
+	}
+	for (int i = 0; i < 9; ++i) {
+		matrix1[i] = result[i];
+	}
 }
 
 int main()
