@@ -59,24 +59,24 @@ double scalar(double* a, double* b) {
 }
 
 void calculateEquatorialCoordinates(double x, double y, double z, double* result) {
-	// ��������� ������ ����������� (alpha) � ��������
-	double alpha = atan2(y, x); // atan2 ��������� ����� x � y
+	// Âû÷èñëÿåì ïðÿìîå âîñõîæäåíèå (alpha) â ðàäèàíàõ
+	double alpha = atan2(y, x); // atan2 ó÷èòûâàåò çíàêè x è y
 
-	// ��������� ��������� (delta) � ��������
-	double r = sqrt(x * x + y * y + z * z); // ���������� �� ������ ���������
-	double delta = asin(z / r); // ��������� = arcsin(z / r)
+	// Âû÷èñëÿåì ñêëîíåíèå (delta) â ðàäèàíàõ
+	double r = sqrt(x * x + y * y + z * z); // ðàññòîÿíèå îò íà÷àëà êîîðäèíàò
+	double delta = asin(z / r); // ñêëîíåíèå = arcsin(z / r)
 
-	// ����������� ���������� �� ������ � ������� ����
-	result[0] = alpha * RAD_TO_ARCSECONDS; // ������ ����������� � �������� ����
-	result[1] = delta * RAD_TO_ARCSECONDS; // ��������� � �������� ����
+	// Ïðåîáðàçóåì ðåçóëüòàòû èç ðàäèàí â ñåêóíäû äóãè
+	result[0] = alpha * RAD_TO_ARCSECONDS; // Ïðÿìîå âîñõîæäåíèå â ñåêóíäàõ äóãè
+	result[1] = delta * RAD_TO_ARCSECONDS; // Ñêëîíåíèå â ñåêóíäàõ äóãè
 }
 
 void calculateCartesianCoordinates(double alpha_arcseconds, double delta_arcseconds, double r, double* result) {
-	// ��������� ������ ����������� � ��������� �� ���������� � �������
+	// Ïåðåâîäèì ïðÿìîå âîñõîæäåíèå è ñêëîíåíèå èç àðêàñåêóíä â ðàäèàíû
 	double alpha = alpha_arcseconds / RAD_TO_ARCSECONDS;
 	double delta = delta_arcseconds / RAD_TO_ARCSECONDS;
 
-	// ��������� ��������� ����������
+	// Âû÷èñëÿåì äåêàðòîâû êîîðäèíàòû
 	result[0] = r * cos(delta) * cos(alpha); // x
 	result[1] = r * cos(delta) * sin(alpha); // y
 	result[2] = r * sin(delta);              // z
@@ -87,7 +87,7 @@ int main()
 {
 	bool exactFlag = false;
 	double h = min_h;
-	double t = 0;		
+	double t = 0;
 	double m[N];
 	double X[dim * N * 2];
 	double Xbuf[dim * N * 2];
@@ -95,34 +95,34 @@ int main()
 	double k2[dim * N * 2];
 	double k3[dim * N * 2];
 	double k4[dim * N * 2];
-	double EqCoords[2] = {0, 0};
+	double EqCoords[2] = {0, 0};	// Буфер для координат звезды
 	double EqCoordsBH[2] = {959100.7014, -104377.4682};		// R.A., Decl in arcsec
-	double BH[3] = {0, 0, 0};
+	double BH[3] = {0, 0, 0}; // Декартовы координаты ЧД
 
-	calculateCartesianCoordinates(EqCoordsBH[0], EqCoordsBH[1], RBH, BH);
+	calculateCartesianCoordinates(EqCoordsBH[0], EqCoordsBH[1], RBH, BH); // Расчет декартовых координат из экваториальных, записываются в массив BH
 
 
-	X[0] = -13946410030007.033;		// S2
-	X[1] = 2625500133928.027;		// T_P = 2002.32
+	X[0] = -13946410030007.033;		// Координаты S2
+	X[1] = 2625500133928.027;		// Момент прохождения перицентра T_P = 2002.32
 	X[2] = 12102295968349.293;
 
-	X[3] = 2689819.2541161072;
+	X[3] = 2689819.2541161072;		// Скорость S2
 	X[4] = 6762698.965156819;
 	X[5] = 1632570.8144508821;
 
 
 	FILE* fp_S2 = fopen("S2.txt", "w");
 	FILE* fp_S2_Eq = fopen("S2_Equatorial.txt", "w");
-	t = 0.32 * Y;
-	while (t < T)
+	t = 2002.32 * Y;		// Момент времени старта отсчета
+	while (t < t + T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
-		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
+		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords); // Вычисление экваториальных координат. X - координаты звезды в системе относительно ЧД
 
-		fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y + 2002, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
-		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y + 2002, X[0], X[1], X[2]);
+		fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);		// В файл: разница между экв. координатами ЧД и Звезды
+		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);		// В файл: дата, декартовы координаты относительно ЧД
 	}
 	fclose(fp_S2);
 	fclose(fp_S2_Eq);
@@ -137,16 +137,16 @@ int main()
 
 	FILE* fp_S38 = fopen("S38.txt", "w");
 	FILE* fp_S38_Eq = fopen("S38_Equatorial.txt", "w");
-	t = 1.30 * Y;
-	while (t < T)
+	t = 2003.30 * Y;
+	while (t < t + T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
 
-		fprintf(fp_S38_Eq, "%.3f %.4f %.4f\n", t / Y + 2002, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
-		fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y + 2002, X[0], X[1], X[2]);
+		fprintf(fp_S38_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);
+		fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
 	}
 	fclose(fp_S38);
 	fclose(fp_S38_Eq);
@@ -161,16 +161,16 @@ int main()
 
 	FILE* fp_S55 = fopen("S55.txt", "w");
 	FILE* fp_S55_Eq = fopen("S55_Equatorial.txt", "w");
-	t = 7.31 * Y;
-	while (t < T)
+	t = 2009.31 * Y;
+	while (t < t + T)
 	{
 		for (int i = 0; i < step / h; i++, t += h) {
 			Ralston3(X, Xbuf, k1, k2, k3, m, h);
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
 
-		fprintf(fp_S55_Eq, "%.3f %.4f %.4f\n", t / Y + 2002, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
-		fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y + 2002, X[0], X[1], X[2]);
+		fprintf(fp_S55_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0], EqCoordsBH[1] - EqCoords[1]);
+		fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
 	}
 	fclose(fp_S55);
 	fclose(fp_S55_Eq);
