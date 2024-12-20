@@ -6,12 +6,15 @@ const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
 const int params_num = states_num + 1; // states + mass BH
 const int observation_num = 2 * (33 + 29 + 25); // alpha, delta for each observation of three stars
+const double RAD_TO_ARCSECONDS = 206264.8;
 const double C = 299792458.0;
 const double start_time = 2002.500;
 const double end_time = 2016;
 const double Y = 31558149.0;
 const double step = Y / 1000.0;
 double const h = Y / 10000.0;
+const std::vector<double> BH_cart = {};
+const std::vector<double> BH_eq = {};
 
 std::vector<double> F_GR_3(std::vector<double>& state) {
 	std::vector<double> d_state(states_num), R(stars_num), Vsqrd(stars_num), VxR(stars_num);
@@ -74,12 +77,35 @@ std::vector<double> F_dxdP(std::vector<double>& dxdP, std::vector<double>& state
 	return result;
 }
 
-double RA(std::vector<double>& params) {
-	return 0;
+double gRA(std::vector<double>& params, int observ_counter) {
+	int k;
+	if (observ_counter <= 33) k = 0;
+	else if (observ_counter <= 62) k = 1;
+	else k = 2;
+
+	double x = params[3 * k] + BH_cart[0];
+	double y = params[3 * k + 1] + BH_cart[1];
+	double z = params[3 * k + 2] + BH_cart[2];
+
+	double alpha = atan2(y, x);
+
+	return alpha * RAD_TO_ARCSECONDS - BH_eq[0]; // Прямое восхождение в секундах дуги
 }
 
-double Decl(std::vector<double>& params) {
-	return 0;
+double gDecl(std::vector<double>& params, int observ_counter) {
+	int k;
+	if (observ_counter <= 33) k = 0;
+	else if (observ_counter <= 62) k = 1;
+	else k = 2;
+
+	double x = params[3 * k] + BH_cart[0];
+	double y = params[3 * k + 1] + BH_cart[1];
+	double z = params[3 * k + 2] + BH_cart[2];
+
+	double r = sqrt(x * x + y * y + z * z);
+	double delta = asin(z / r);
+
+	return delta * RAD_TO_ARCSECONDS - BH_eq[1];
 }
 
 std::vector<double> dRA(std::vector<double>& params) {
@@ -132,6 +158,7 @@ void RK4_isohronic(std::vector<double>& dxdP, std::vector<double>& params, std::
 
 std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double>& dxdP, std::vector<double>& W, std::vector<double>& observations, std::vector<std::vector<double>>& bufers) {
 	std::vector<double> dgdx(states_num), A(observation_num * params_num), residuals(observation_num), params_new(params_num);
+	params_new = params;
 	double t = start_time;
 	int observ_counter = 0;
 	while (t < end_time) {
@@ -141,15 +168,15 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		}
 
 		if (t == observations[observ_counter * 3]) {
-			residuals[observ_counter * 2] = observations[observ_counter * 3 + 1] - RA(params);
-			residuals[observ_counter * 2 + 1] = observations[observ_counter * 3 + 2] - Decl(params);
+			residuals[observ_counter * 2] = observations[observ_counter * 3 + 1] - gRA(params, observ_counter);
+			residuals[observ_counter * 2 + 1] = observations[observ_counter * 3 + 2] - gDecl(params, observ_counter);
 
 			// Заполнение соответствующих строк матрицы А
 
 			observ_counter++;
 		}
 	}
-	// params_new = params - (AT * W * A)^-1 * AT * W * residuals
+	// params_new -= (AT * W * A)^-1 * AT * W * residuals
 	return params_new;
 }
 
