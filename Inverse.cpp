@@ -89,7 +89,7 @@ double gRA(std::vector<double>& params, int observ_counter) {
 
 	double alpha = atan2(y, x);
 
-	return alpha * RAD_TO_ARCSECONDS - BH_eq[0]; // Прямое восхождение в секундах дуги
+	return alpha * RAD_TO_ARCSECONDS - BH_eq[0];
 }
 
 double gDecl(std::vector<double>& params, int observ_counter) {
@@ -171,7 +171,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			residuals[observ_counter * 2] = observations[observ_counter * 3 + 1] - gRA(params, observ_counter);
 			residuals[observ_counter * 2 + 1] = observations[observ_counter * 3 + 2] - gDecl(params, observ_counter);
 
-			// Заполнение соответствующих строк матрицы А
+			// Р—Р°РїРѕР»РЅРµРЅРёРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёС… СЃС‚СЂРѕРє РјР°С‚СЂРёС†С‹ Рђ
 
 			observ_counter++;
 		}
