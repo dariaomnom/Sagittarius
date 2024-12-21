@@ -88,14 +88,14 @@ std::vector<double> F_dxdP(std::vector<double>& dxdP, std::vector<double>& state
 	
 	// left down block
 	for (int k = 0; k < 3; k++) {
-		for (int i = 9; i < 12; i++) {
+		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				int ik = i + 3 * k;
+				int ik = 9 + i + 3 * k;
 				int jk = j + 3 * k;
-				if (i - 9 == j) 
-					dFdx[states_num * ik + jk] = -M * (pow(R[k], 2) - 3 * pow(state[j], 2)) / pow(R[k], 5);
+				if (ik - 9 == jk) 
+					dFdx[states_num * ik + jk] = -M * (pow(R[k], 2) - 3 * pow(state[jk], 2)) / pow(R[k], 5);
 				else 
-					dFdx[states_num * ik + jk] = M * 3 * state[i - 9] * state[j] / pow(R[k], 5);
+					dFdx[states_num * ik + jk] = M * 3 * state[ik - 9] * state[jk] / pow(R[k], 5);
 			}
 		}
 	}
@@ -116,7 +116,7 @@ std::vector<double> F_dxdP(std::vector<double>& dxdP, std::vector<double>& state
 	for (int i = 0; i < states_num; i++) { // (dF/dP) + (dF/dx)(dx/dP)
 		for (int j = 0; j < params_num; j++) {
 			
-			if (j == params_num - 1 && i > states_num / 2) 
+			if (j == params_num - 1 && i >= states_num / 2) 
 				result[i * params_num + j] = dFdP[i - states_num / 2];
 
 			for (int k = 0; k < states_num; k++) {
