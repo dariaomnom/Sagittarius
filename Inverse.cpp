@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
@@ -13,8 +16,9 @@ const double end_time = 2016;
 const double Y = 31558149.0;
 const double step = Y / 1000.0;
 double const h = Y / 10000.0;
-const std::vector<double> BH_cart = {};
-const std::vector<double> BH_eq = {};
+const std::vector<double> BH_cart = std::vector<double>();
+const std::vector<double> BH_eq = std::vector<double>();
+std::vector<std::vector<double> > observations;
 
 std::vector<double> F_GR_3(std::vector<double>& state) {
 	std::vector<double> d_state(states_num), R(stars_num), Vsqrd(stars_num), VxR(stars_num);
@@ -43,35 +47,82 @@ std::vector<double> F_GR_3(std::vector<double>& state) {
 }
 
 std::vector<double> F_dxdP(std::vector<double>& dxdP, std::vector<double>& state) { // testing
-	std::vector<double> result(states_num * params_num, 0.0), dFdP(states_num * params_num, 0.0), dFdx(states_num * states_num, 0.0);
+	std::vector<double> result(states_num * params_num, 0.0), dFdx(states_num * states_num, 0.0), dFdP(states_num / 2, 0.0);
 	double M = state.back();
 	std::vector<double> R(stars_num);
 	R[0] = sqrt(state[0] * state[0] + state[1] * state[1] + state[2] * state[2]);
 	R[1] = sqrt(state[3] * state[3] + state[4] * state[4] + state[5] * state[5]);
 	R[2] = sqrt(state[6] * state[6] + state[7] * state[7] + state[8] * state[8]);
 
-	for (int i = states_num / 2; i < states_num; i++) {
-		dFdP[states_num * i + params_num - 1] = -M * state[i - states_num / 2] / pow(R[i / 3 - 3], 3.);
+	// last column
+
+	for (int i = 0; i < states_num / 2; i++) {
+		dFdP[i] = -M * state[i] / pow(R[i / 3], 3.);
 	}
-	for (int i = states_num / 2; i < states_num; i++) {
-		dFdx[states_num * i + i] = 1;
+	std::cout << std::fixed << std::setprecision(3);
+    std::cout << "Последний столбец:" << std::endl;
+    for (int i = 0; i < dFdP.size(); i++) {
+		if (dFdP[i] == 0.0) {
+			std::cout << '0';
+		} else {
+			std::cout << dFdP[i];
+		}
+        std::cout << std::endl;    
+    }
+
+	// E-matrix
+	for (int i = 0; i < states_num / 2; i++) {
+		dFdx[states_num * i + i + states_num / 2] = 1;
 	}
+	std::cout << "Единичная матрица:" << std::endl;
+	for (int i = 0; i < states_num; i++) {
+		for (int j = 0; j < states_num; j++) {
+			if (dFdx[i * states_num + j] == 0.0) {
+				std::cout << std::setw(7) << '0';
+			} else {
+				std::cout << std::setw(7) << dFdx[i * states_num + j];
+			}
+		}
+		std::cout << std::endl;
+	}
+	
+	// left down block
 	for (int k = 0; k < 3; k++) {
 		for (int i = 9; i < 12; i++) {
 			for (int j = 0; j < 3; j++) {
 				int ik = i + 3 * k;
 				int jk = j + 3 * k;
-				if (i - 9 == j) dFdx[states_num * ik + jk] = -M * (pow(R[k], 2) - 3 * pow(state[j], 2)) / pow(R[k], 5);
-				else dFdx[states_num * ik + jk] = M * 3 * state[i - 9] * state[j] / pow(R[k], 5);
+				if (i - 9 == j) 
+					dFdx[states_num * ik + jk] = -M * (pow(R[k], 2) - 3 * pow(state[j], 2)) / pow(R[k], 5);
+				else 
+					dFdx[states_num * ik + jk] = M * 3 * state[i - 9] * state[j] / pow(R[k], 5);
 			}
 		}
 	}
+	std::cout << std::fixed << std::setprecision(3);
+    std::cout << "Левый нижний блок:" << std::endl;
+	for (int i = 0; i < states_num; i++) {
+		for (int j = 0; j < states_num; j++) {
+			if (dFdx[i * states_num + j] == 0.0) {
+				std::cout << std::setw(7) << '0';
+			} else {
+				std::cout << std::setw(7) << dFdx[i * states_num + j];
+			}
+		}
+		std::cout << std::endl;
+	}
+
+	// result sum of martices
 	for (int i = 0; i < states_num; i++) { // (dF/dP) + (dF/dx)(dx/dP)
 		for (int j = 0; j < params_num; j++) {
-			result[i * states_num + j] = dFdP[i * states_num + j];
+			
+			if (j == params_num - 1 && i > states_num / 2) 
+				result[i * params_num + j] = dFdP[i - states_num / 2];
+
 			for (int k = 0; k < states_num; k++) {
-				result[i * states_num + j] += dFdx[i * states_num + k] * dxdP[k * states_num + j];
+				result[i * params_num + j] += dFdx[i * states_num + k] * dxdP[k * params_num + j];
 			}
+
 		}
 	}
 	return result;
@@ -118,7 +169,7 @@ std::vector<double> dDecl(std::vector<double>& params) {
 	return result;
 }
 
-void RK4_orbit(std::vector<double>& state, std::vector<std::vector<double>>& bufers, double h)
+void RK4_orbit(std::vector<double>& state, std::vector<std::vector<double> >& bufers, double h)
 {
 	std::vector<double> stateBuf = bufers[0], k1 = bufers[1], k2 = bufers[2], k3 = bufers[3];
 	k1 = F_GR_3(state);
@@ -137,7 +188,7 @@ void RK4_orbit(std::vector<double>& state, std::vector<std::vector<double>>& buf
 	}
 }
 
-void RK4_isohronic(std::vector<double>& dxdP, std::vector<double>& params, std::vector<std::vector<double>>& bufers, double h)
+void RK4_isohronic(std::vector<double>& dxdP, std::vector<double>& params, std::vector<std::vector<double> >& bufers, double h)
 {
 	std::vector<double> dxdPBuf = bufers[0], k1 = bufers[1], k2 = bufers[2], k3 = bufers[3];
 	k1 = F_dxdP(dxdP, params);
@@ -156,7 +207,7 @@ void RK4_isohronic(std::vector<double>& dxdP, std::vector<double>& params, std::
 	}
 }
 
-std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double>& dxdP, std::vector<double>& W, std::vector<double>& observations, std::vector<std::vector<double>>& bufers) {
+std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double>& dxdP, std::vector<double>& W, std::vector<double>& observations, std::vector<std::vector<double> >& bufers) {
 	std::vector<double> dgdx(states_num), A(observation_num * params_num), residuals(observation_num), params_new(params_num);
 	params_new = params;
 	double t = start_time;
@@ -180,7 +231,81 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 	return params_new;
 }
 
+
+void read_file_into_matrix(const std::string& filename, std::vector<std::vector<double> >& matrix) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Ошибка при открытии файла: " << filename << std::endl;
+        return;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        std::vector<double> row;
+        std::stringstream ss(line);
+        double value;
+
+        while (ss >> value) {
+            row.push_back(value);
+        }
+
+        matrix.push_back(row);
+    }
+
+    file.close();
+}
+
+void read_observations(std::vector<std::vector<double> >& observations) {
+    observations.clear();
+    read_file_into_matrix("S2_Article.txt", observations);
+    read_file_into_matrix("S38_Article.txt", observations);
+    read_file_into_matrix("S55_Article.txt", observations);
+}
+
 int main() {
+    read_observations(observations);
+	// test read
+    // for (size_t i = 0; i < observations.size(); ++i) {
+    //     for (size_t j = 0; j < observations[i].size(); ++j) {
+    //         std::cout << observations[i][j] << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+
+	// test F_dxdP
+    std::vector<double> state(params_num);
+    for (int i = 0; i < params_num; ++i) {
+        state[i] = static_cast<double>(i + 1);
+    }
+
+    std::vector<double> dxdP(18 * 19, 0.0); // Матрица 18x19, заполнена нулями
+    for (int i = 0; i < 18; ++i) {
+        dxdP[i * 19 + i] = 1.0; // Установка единиц на главной диагонали (18x18 часть)
+    }
+
+    std::vector<double> result = F_dxdP(dxdP, state);
+
+    // std::cout << "Матрица dxdP (18x19):" << std::endl;
+    // for (int i = 0; i < 18; ++i) {
+    //     for (int j = 0; j < 19; ++j) {
+    //         std::cout << std::setw(2) << dxdP[i * 19 + j] << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+	std::cout << std::fixed << std::setprecision(3);
+    std::cout << "Результат функции F_dxdP:" << std::endl;
+    for (size_t i = 0; i < result.size(); ++i) {
+		if (result[i] == 0.0) {
+			std::cout << std::setw(7) << '0';
+		} else {
+			std::cout << std::setw(7) << result[i];
+		}
+        if ((i + 1) % params_num == 0) {
+            std::cout << std::endl;
+        }
+    }
 
 	return 0;
 }
