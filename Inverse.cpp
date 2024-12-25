@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <unistd.h>
 
 #define DEBUG 1
 const int stars_num = 3; // S2, S38, S55
@@ -156,14 +157,39 @@ std::vector<double> CholeskyDecomposition(const std::vector<double>& A, int n) {
 			double sum = 0.0;
 
 			if (j == i) {
-				for (int k = 0; k < j; ++k)
+				for (int k = 0; k < j; ++k) {
+					if (DEBUG) {
+						std::cout << " IF j == i\n   sum = " << L[j * n + k] << "*" << L[j * n + k] << std::endl;
+					}
 					sum += L[j * n + k] * L[j * n + k];
+					if (DEBUG) {
+						std::cout << "   sum = " << sum << std::endl;
+					}
+					sleep(1);
+				}
 				L[j * n + j] = std::sqrt(A[j * n + j] - sum);
+				if (DEBUG) {
+					std::cout << "   >>> A[j * n + j] - sum = " << A[j * n + j] << " - " << sum << std::endl;
+					std::cout << "   >>> L[j * n + j] = sqrt( " << A[j * n + j] - sum << " )" << std::endl;
+				}
+				sleep(1);
 			}
 			else {
-				for (int k = 0; k < j; ++k)
+				for (int k = 0; k < j; ++k) {
+					if (DEBUG) {
+						std::cout << "ELSE\n   sum = " << L[i * n + k] << "*" << L[j * n + k] << std::endl;
+					}
 					sum += L[i * n + k] * L[j * n + k];
+					if (DEBUG) {
+						std::cout << "   sum = " << sum << std::endl;
+					}
+					sleep(1);
+				}
 				L[i * n + j] = (A[i * n + j] - sum) / L[j * n + j];
+				if (DEBUG) {
+						std::cout << "   L[i * n + j] = " << (A[i * n + j] - sum) << "/" << L[j * n + j] << std::endl;
+				}
+				sleep(1);
 			}
 		}
 	}
@@ -204,6 +230,12 @@ std::vector<double> SolveCholesky(const std::vector<double>& A, const std::vecto
 
 	// Разложение A = L * L^T
 	std::vector<double> L = CholeskyDecomposition(A, n);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			printf("%.1f ", L[i * n + j]);
+		}
+		printf("\n");
+  	}
 
 	// Решение L * y = B
 	std::vector<double> y = ForwardSubstitution(L, B, n);
@@ -242,23 +274,67 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				std::cout << "step " << step << std::endl;
 			}
 
+			if (DEBUG) {
+				std::cout << "\n  CONDITION  \n" << std::endl;
+				for (int i = 0; i < condition.size(); i++) {
+					std::cout << std::setprecision(0) << std::setw(7) << condition[i] << " ";
+					if ((i + 1) % 19 == 0) printf("\n");
+				}
+				printf("\n");
+				sleep(1);
+			}
+
 
 			// RA
 			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5]);
+
+			if (DEBUG) {
+				std::cout << "\n  D G  \n" << std::endl;
+				for (int i = 0; i < dg.size(); i++) {
+					std::cout << std::setprecision(0) << std::setw(7) << dg[i] << " ";
+					if ((i + 1) % 19 == 0) printf("\n");
+				}
+				printf("\n");
+				sleep(1);
+			}
+
 			for (int i = 0; i < params_num; i++) {	// line of A matrix -(dg/dx * dx/dP)_k
 				Ak[i] = 0.0;
 				for (int j = 0; j < states_num; j++) {
 					Ak[i] -= dg[j] * condition[j * params_num + i + params_num];
 				}
+				// if (DEBUG) {
+				// 	std::cout << "\n" << i << std::endl;
+				// 	std::cout << "Ak[i] = " << Ak[i] << std::endl;
+				// 	// std::cout << "\nAk[i] = " << Ak[i] << " = " << dg[j] << " * " << condition[j * params_num + i + params_num] << std::endl;
+				// 	sleep(1);
+				// }
+			}
+
+			if (DEBUG) {
+				std::cout << "\n  Ak \n" << std::endl;
+				for (int i = 0; i < Ak.size(); i++) {
+					std::cout << std::setprecision(0) << std::setw(7) << Ak[i] << " ";
+					if ((i + 1) % 19 == 0) printf("\n");
+				}
+				printf("\n");
+				sleep(1);
 			}
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
 				b[i] += Ak[i] / observations[observ_counter * 6 + 3] * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5]));
 			}
+			// b = At * sqrt(w) * r(beta)
+			// At - один столбец k
+			// r - одна невязка r[i]
 
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
 				for (int j = 0; j < params_num; j++) {
 					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 6 + 3], 2.0);
+					if (DEBUG) {
+						std::cout << "\nB[i * params_num + j] = " << B[i * params_num + j] << "= " << Ak[i] << " * " << Ak[j] << " / " << pow(observations[observ_counter * 6 + 3], 2.0) << std::endl;
+						sleep(1);
+					}
 				}
 			}
 
@@ -303,6 +379,14 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			t += step;
 		}
 
+	}
+	if (DEBUG) { // матрица B
+		printf("\nB MATRIX\n");
+		for (int i = 0; i < 19*19; i++) {
+			printf("%.0f ", B[i]);
+			if ((i + 1) % 19 == 0) printf("\n");
+		}
+		printf("\n");
 	}
 	if (DEBUG) {
 		for (int i = 0; i < params_num; i++) {
