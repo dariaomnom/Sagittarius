@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-
+#define DEBUG 1
 const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
 const int params_num = states_num + 1; // states + mass BH
@@ -107,11 +107,7 @@ void RK4_step(std::vector<double>& condition, std::vector<std::vector<double> >&
 }
 
 
-double g(std::vector<double>& condition, int observ_counter) { // testing
-	int k;
-	if (observ_counter % observation_num <= 33) k = 0;
-	else if (observ_counter % observation_num <= 62) k = 1;
-	else k = 2;
+double g(std::vector<double>& condition, int observ_counter, int k) { // testing
 
 	double x = condition[3 * k] + BH_cart[0];
 	double y = condition[3 * k + 1] + BH_cart[1];
@@ -130,12 +126,8 @@ double g(std::vector<double>& condition, int observ_counter) { // testing
 }
 
 
-std::vector<double> dgdx(std::vector<double>& condition, int observ_counter) { // testing
+std::vector<double> dgdx(std::vector<double>& condition, int observ_counter, int k) { // testing
 	std::vector<double> result(states_num, 0.0);
-	int k;
-	if (observ_counter % observation_num <= 33) k = 0;
-	else if (observ_counter % observation_num <= 62) k = 1;
-	else k = 2;
 
 	double x = condition[3 * k] + BH_cart[0];
 	double y = condition[3 * k + 1] + BH_cart[1];
@@ -156,96 +148,76 @@ std::vector<double> dgdx(std::vector<double>& condition, int observ_counter) { /
 }
 
 
-void llt_Cholesky(std::vector<double>& A)
-{
-	size_t n = std::sqrt(A.size());
-	double a = 0.0;
+std::vector<double> CholeskyDecomposition(const std::vector<double>& A, int n) {
+	std::vector<double> L(n * n, 0.0);
 
-	for (size_t i = 0; i < n; i++)
-	{
-		for (size_t j = 0; j <= i; j++)
-		{
-			if (i == j)
-			{
-				a = A[i * n + i];
-				for (size_t k = 0; k < i; k++)
-				{
-					a -= A[i * n + k] * A[i * n + k];
-				}
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j <= i; ++j) {
+			double sum = 0.0;
 
-				// std::cout << "a: " << i << " " << a << std::endl;
-				A[i * n + j] = std::sqrt(a);
+			if (j == i) {
+				for (int k = 0; k < j; ++k)
+					sum += L[j * n + k] * L[j * n + k];
+				L[j * n + j] = std::sqrt(A[j * n + j] - sum);
 			}
-			else
-			{
-				a = A[i * n + j];
-				for (size_t k = 0; k < j; k++)
-				{
-					a -= A[i * n + k] * A[j * n + k];
-				}
-				// std::cout << "a_: " << i << " " << j << " " << a << std::endl;
-				A[i * n + j] = a / A[j * n + j];
+			else {
+				for (int k = 0; k < j; ++k)
+					sum += L[i * n + k] * L[j * n + k];
+				L[i * n + j] = (A[i * n + j] - sum) / L[j * n + j];
 			}
 		}
 	}
 
-	for (size_t i = 0; i < n; i++)
-	{
-		for (size_t j = i + 1; j < n; j++)
-		{
-			A[i * n + j] = 0.0;
-		}
-	}
+	return L;
 }
 
-std::vector<double> forward_substitution(const std::vector<double>& L, const std::vector<double>& b)
-{
-	size_t n = std::sqrt(L.size());
+// Прямой ход для L * y = B
+std::vector<double> ForwardSubstitution(const std::vector<double>& L, const std::vector<double>& B, int n) {
 	std::vector<double> y(n, 0.0);
 
-	for (size_t i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; ++i) {
 		double sum = 0.0;
-		for (size_t j = 0; j < i; j++)
-		{
+		for (int j = 0; j < i; ++j)
 			sum += L[i * n + j] * y[j];
-		}
-		y[i] = (b[i] - sum) / L[i * n + i];
+		y[i] = (B[i] - sum) / L[i * n + i];
 	}
 
 	return y;
 }
 
-std::vector<double> backward_substitution(const std::vector<double>& L, const std::vector<double>& y)
-{
-	size_t n = std::sqrt(L.size());
-
+// Обратный ход для L^T * x = y
+std::vector<double> BackwardSubstitution(const std::vector<double>& L, const std::vector<double>& y, int n) {
 	std::vector<double> x(n, 0.0);
-	for (int i = n - 1; i >= 0; i--)
-	{
+
+	for (int i = n - 1; i >= 0; --i) {
 		double sum = 0.0;
-		for (size_t j = i + 1; j < n; j++)
-		{
+		for (int j = i + 1; j < n; ++j)
 			sum += L[j * n + i] * x[j];
-		}
 		x[i] = (y[i] - sum) / L[i * n + i];
 	}
 
 	return x;
 }
 
-std::vector<double> regression(std::vector<double>& A, const std::vector<double>& b)
-{
-	llt_Cholesky(A);
+// Решение системы AX = B с использованием разложения Холецкого
+std::vector<double> SolveCholesky(const std::vector<double>& A, const std::vector<double>& B, int n) {
 
-	auto y = forward_substitution(A, b);
-	auto x = backward_substitution(A, y);
+	// Разложение A = L * L^T
+	std::vector<double> L = CholeskyDecomposition(A, n);
+
+	// Решение L * y = B
+	std::vector<double> y = ForwardSubstitution(L, B, n);
+
+	// Решение L^T * x = y
+	std::vector<double> x = BackwardSubstitution(L, y, n);
+
 	return x;
 }
 
 std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double>& observations, std::vector<std::vector<double> >& bufers) {
 	std::vector<double> condition(params_num + states_num * params_num),
 		b(params_num, 0.0),                                 // AT * Wsqrd * r(beta)
+		x(params_num, 0.0),                                 // AT * Wsqrd * r(beta)
 		B(params_num * params_num, 0.0),                    // (AT * W * A)
 		dg(states_num, 0.0),
 		Ak(params_num, 0.0);
@@ -258,20 +230,21 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 	double step = STEP;
 	int observ_counter = 0;
 	while (t < end_time * Y and observ_counter < observation_num) {
-		RK4_step(condition, bufers, step);
-		t += step;
-		//std::cout << "t " << t << std::endl;
 
-		if (observations[observ_counter * 5] * Y - t < step) {
-			std::cout << observ_counter << std::endl;
-			step = observations[observ_counter * 5] * Y - t;
+		if (observations[observ_counter * 6] * Y - t < step) {
+			step = observations[observ_counter * 6] * Y - t;
 			RK4_step(condition, bufers, step);
 			t += step;
-			std::cout << observations[observ_counter * 5] << std::endl;
-			std::cout << "step " << step << std::endl;
+			if (DEBUG) {
+				std::cout << "\n";
+				std::cout << observ_counter << std::endl;
+				std::cout << observations[observ_counter * 6] << std::endl;
+				std::cout << "step " << step << std::endl;
+			}
+
 
 			// RA
-			dg = dgdx(condition, observ_counter);
+			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5]);
 			for (int i = 0; i < params_num; i++) {	// line of A matrix -(dg/dx * dx/dP)_k
 				Ak[i] = 0.0;
 				for (int j = 0; j < states_num; j++) {
@@ -280,17 +253,17 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			}
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
-				b[i] += Ak[i] / observations[observ_counter * 5 + 3] * (observations[observ_counter * 5 + 1] - g(condition, observ_counter));
+				b[i] += Ak[i] / observations[observ_counter * 6 + 3] * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5]));
 			}
 
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
 				for (int j = 0; j < params_num; j++) {
-					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 5 + 3], 2.0);
+					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 6 + 3], 2.0);
 				}
 			}
 
 			// Decl
-			dg = dgdx(condition, observ_counter + observation_num);
+			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5]);
 			for (int i = 0; i < params_num; i++) {	// line of A matrix -(dg/dx * dx/dP)_k
 				Ak[i] = 0.0;
 				for (int j = 0; j < states_num; j++) {
@@ -299,23 +272,53 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			}
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
-				b[i] += Ak[i] / observations[observ_counter * 5 + 4] * (observations[observ_counter * 5 + 2] - g(condition, observ_counter + observation_num));
+				b[i] += Ak[i] / observations[observ_counter * 6 + 4] * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5]));
 			}
 
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
 				for (int j = 0; j < params_num; j++) {
-					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 5 + 4], 2.0);
+					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 6 + 4], 2.0);
 				}
 			}
 
 			observ_counter++;
 			step = STEP;
+			/*if (DEBUG) {
+				for (int i = 0; i < params_num; i++) {
+					for (int j = 0; j < params_num; j++) {
+						printf("%.3f ", B[i * params_num + j]);
+					}
+					printf("\n");
+				}
+			}*/
+			/*if (DEBUG) {
+				for (int i = 0; i < params_num; i++) {
+					printf("%.3f ", b[i]);
+				}
+				printf("\n");
+			}*/
 		}
-	}
+		else {
+			RK4_step(condition, bufers, step);
+			t += step;
+		}
 
-	b = regression(B, b);
+	}
+	if (DEBUG) {
+		for (int i = 0; i < params_num; i++) {
+			printf("%.3f ", b[i]);
+		}
+		printf("\n\n");
+	}
+	x = SolveCholesky(B, b, params_num);
+	if (DEBUG) {
+		for (int i = 0; i < params_num; i++) {
+			printf("%.3f ", x[i]);
+		}
+		printf("\n\n");
+	}
 	for (int i = 0; i < params_num; i++) {
-		params[i] -= b[i];
+		params[i] -= x[i];
 	}
 
 	return params;
