@@ -207,8 +207,10 @@ int main()
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords); 				// Вычисление экваториальных координат. X - координаты звезды в системе относительно ЧД
 
-		fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);		// В файл: разница между экв. координатами ЧД и Звезды
-		fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);						// В файл: дата, декартовы координаты относительно ЧД
+		if ((2010.0 - t/Y) < 0.001){
+			fprintf(fp_S2_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);		// В файл: разница между экв. координатами ЧД и Звезды
+			fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);						// В файл: дата, декартовы координаты относительно ЧД
+		}
 	}
 	fclose(fp_S2);
 	fclose(fp_S2_Eq);
@@ -233,8 +235,10 @@ int main()
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
 
-		fprintf(fp_S38_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
-		fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
+		if ((2010.0 - t/Y) < 0.001){
+			fprintf(fp_S38_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
+			fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
+		}
 	}
 	fclose(fp_S38);
 	fclose(fp_S38_Eq);
@@ -259,8 +263,10 @@ int main()
 		}
 		calculateEquatorialCoordinates(X[0] + BH[0], X[1] + BH[1], X[2] + BH[2], EqCoords);
 
-		fprintf(fp_S55_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
-		fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
+		if ((2010.0 - t/Y) < 0.0001) {
+			fprintf(fp_S55_Eq, "%.3f %.4f %.4f\n", t / Y, EqCoordsBH[0] - EqCoords[0] - 360 * 3600, EqCoordsBH[1] - EqCoords[1]);
+			fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, X[0], X[1], X[2]);
+		}
 	}
 	fclose(fp_S55);
 	fclose(fp_S55_Eq);

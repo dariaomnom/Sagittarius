@@ -16,8 +16,8 @@ const double start_time = 2002.0;
 const double end_time = 2016.0;
 const double Y = 31558149.0;
 const double STEP = Y / 10000.0;
-const std::vector<double> BH_cart = std::vector<double>();
-const std::vector<double> BH_eq = std::vector<double>();
+const std::vector<double> BH_cart = { -1.4388065248297531e+19, -2.2977127354968464e+20, -1.2758089026580264e+20 };
+const std::vector<double> BH_eq = { 959100.7014, -104377.4682 };
 
 std::vector<double> F(std::vector<double>& condition) {
 	std::vector<double> result(params_num + states_num * params_num, 0.0),
@@ -254,15 +254,21 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 	for (int i = 0; i < states_num; i++) {
 		condition[i * params_num + i + params_num] = 1.0;
 	}
-	double t = start_time;
+	double t = start_time * Y;
 	double step = STEP;
 	int observ_counter = 0;
-	while (t < end_time) {
+	while (t < end_time * Y and observ_counter < observation_num) {
 		RK4_step(condition, bufers, step);
+		t += step;
+		//std::cout << "t " << t << std::endl;
 
 		if (observations[observ_counter * 5] * Y - t < step) {
-			step = observations[observ_counter * 5] - t;
+			std::cout << observ_counter << std::endl;
+			step = observations[observ_counter * 5] * Y - t;
 			RK4_step(condition, bufers, step);
+			t += step;
+			std::cout << observations[observ_counter * 5] << std::endl;
+			std::cout << "step " << step << std::endl;
 
 			// RA
 			dg = dgdx(condition, observ_counter);
@@ -346,19 +352,20 @@ int main() {
 	std::vector<std::vector<double> > bufers = { bufers1, bufers2, bufers3, bufers4 };
 
 	read_file_into_vector("Observations.txt", observations);
-	for (int i = 0; i < observations.size(); i++) {
-		std::cout << observations[i] << " ";
-	}
-	std::cout << "\n" << std::endl;
+	// for (int i = 0; i < observations.size(); i++) {
+	// 	std::cout << observations[i] << " ";
+	// }
+	// std::cout << "\n" << std::endl;
 	read_file_into_vector("Initial parameters.txt", params);
-	for (int i = 0; i < params.size(); i++) {
-		std::cout << params[i] << " ";
-	}
-	std::cout << std::endl;
+	// for (int i = 0; i < params.size(); i++) {
+	// 	std::cout << params[i] << " ";
+	// }
+	// std::cout << std::endl;
 
 	for (int i = 0; i < 10; i++) {
 		printf("BH mass = %.16le\n", params[18]);
 		params = Gauss_Newton(params, observations, bufers);
+		// std::cout << " " << std::endl;
 	}
 
 
