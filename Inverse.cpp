@@ -126,6 +126,7 @@ double g(std::vector<double>& condition, int observ_counter) { // testing
 		double delta = asin(z / r);
 		return delta * RAD_TO_ARCSECONDS - BH_eq[1];
 	}
+	return 0;
 }
 
 
@@ -336,16 +337,24 @@ void read_file_into_vector(const std::string& filename, std::vector<double>& vec
 
 
 int main() {
-	std::vector<double> observations(observation_num * 5),
-		params(params_num),
+	std::vector<double> observations,
+		params,
 		bufers1(params_num + params_num * states_num),
 		bufers2(params_num + params_num * states_num),
 		bufers3(params_num + params_num * states_num),
 		bufers4(params_num + params_num * states_num);
-	std::vector<std::vector<double>> bufers = { bufers1, bufers2, bufers3, bufers4 };
+	std::vector<std::vector<double> > bufers = { bufers1, bufers2, bufers3, bufers4 };
 
 	read_file_into_vector("Observations.txt", observations);
+	for (int i = 0; i < observations.size(); i++) {
+		std::cout << observations[i] << " ";
+	}
+	std::cout << "\n" << std::endl;
 	read_file_into_vector("Initial parameters.txt", params);
+	for (int i = 0; i < params.size(); i++) {
+		std::cout << params[i] << " ";
+	}
+	std::cout << std::endl;
 
 	for (int i = 0; i < 10; i++) {
 		printf("BH mass = %.16le\n", params[18]);
