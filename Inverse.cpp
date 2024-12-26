@@ -4,9 +4,10 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <unistd.h>
+#include <iomanip>
+#include <Windows.h>
 
-#define DEBUG 1
+#define ITER
 const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
 const int params_num = states_num + 1; // states + mass BH
@@ -108,18 +109,18 @@ void RK4_step(std::vector<double>& condition, std::vector<std::vector<double> >&
 }
 
 
-double g(std::vector<double>& condition, int observ_counter, int k) { // testing
+double g(std::vector<double>& condition, int observ_counter, int k, int func_num) { // testing
 
 	double x = condition[3 * k] + BH_cart[0];
 	double y = condition[3 * k + 1] + BH_cart[1];
 	double z = condition[3 * k + 2] + BH_cart[2];
 	double r = sqrt(x * x + y * y + z * z);
 
-	if (observ_counter / observation_num == 0) {
+	if (func_num == 0) {
 		double alpha = atan2(y, x);
 		return alpha * RAD_TO_ARCSECONDS - BH_eq[0];
 	}
-	if (observ_counter / observation_num == 1) {
+	if (func_num == 1) {
 		double delta = asin(z / r);
 		return delta * RAD_TO_ARCSECONDS - BH_eq[1];
 	}
@@ -127,7 +128,7 @@ double g(std::vector<double>& condition, int observ_counter, int k) { // testing
 }
 
 
-std::vector<double> dgdx(std::vector<double>& condition, int observ_counter, int k) { // testing
+std::vector<double> dgdx(std::vector<double>& condition, int observ_counter, int k, int func_num) { // testing
 	std::vector<double> result(states_num, 0.0);
 
 	double x = condition[3 * k] + BH_cart[0];
@@ -135,116 +136,96 @@ std::vector<double> dgdx(std::vector<double>& condition, int observ_counter, int
 	double z = condition[3 * k + 2] + BH_cart[2];
 	double r = sqrt(x * x + y * y + z * z);
 
-	if (observ_counter / observation_num == 0) {
-		result[k] = -y / (x * x + y * y) * RAD_TO_ARCSECONDS;
-		result[k + 1] = x / (x * x + y * y) * RAD_TO_ARCSECONDS;
+	if (func_num == 0) {
+		result[k * 3] = -y / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 1] = x / (x * x + y * y) * RAD_TO_ARCSECONDS;
 	}
-	if (observ_counter / observation_num == 1) {
-		result[k] = -z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
-		result[k + 1] = -z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
-		result[k + 2] = (x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+	if (func_num == 1) {
+		result[k * 3] = -z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 1] = -z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 2] = (x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
 	}
 
 	return result;
 }
 
 
-std::vector<double> CholeskyDecomposition(const std::vector<double>& A, int n) {
-	std::vector<double> L(n * n, 0.0);
+// Функция для выполнения LUP-разложения
+void LUPDecompose(std::vector<double>& A, std::vector<int>& P, int n) {
+	for (int i = 0; i < n; ++i) P[i] = i;
 
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j <= i; ++j) {
-			double sum = 0.0;
-
-			if (j == i) {
-				for (int k = 0; k < j; ++k) {
-					if (DEBUG) {
-						std::cout << " IF j == i\n   sum = " << L[j * n + k] << "*" << L[j * n + k] << std::endl;
-					}
-					sum += L[j * n + k] * L[j * n + k];
-					if (DEBUG) {
-						std::cout << "   sum = " << sum << std::endl;
-					}
-					sleep(1);
-				}
-				L[j * n + j] = std::sqrt(A[j * n + j] - sum);
-				if (DEBUG) {
-					std::cout << "   >>> A[j * n + j] - sum = " << A[j * n + j] << " - " << sum << std::endl;
-					std::cout << "   >>> L[j * n + j] = sqrt( " << A[j * n + j] - sum << " )" << std::endl;
-				}
-				sleep(1);
+	for (int k = 0; k < n; ++k) {
+		// Поиск максимального элемента в текущем столбце
+		int maxRow = k;
+		for (int i = k + 1; i < n; ++i) {
+			if (abs(A[i * n + k]) > abs(A[maxRow * n + k])) {
+				maxRow = i;
 			}
-			else {
-				for (int k = 0; k < j; ++k) {
-					if (DEBUG) {
-						std::cout << "ELSE\n   sum = " << L[i * n + k] << "*" << L[j * n + k] << std::endl;
-					}
-					sum += L[i * n + k] * L[j * n + k];
-					if (DEBUG) {
-						std::cout << "   sum = " << sum << std::endl;
-					}
-					sleep(1);
-				}
-				L[i * n + j] = (A[i * n + j] - sum) / L[j * n + j];
-				if (DEBUG) {
-						std::cout << "   L[i * n + j] = " << (A[i * n + j] - sum) << "/" << L[j * n + j] << std::endl;
-				}
-				sleep(1);
+		}
+
+		// Меняем строки местами в перестановочном векторе
+		std::swap(P[k], P[maxRow]);
+
+		// Меняем строки матрицы
+		for (int j = 0; j < n; ++j) {
+			std::swap(A[k * n + j], A[maxRow * n + j]);
+		}
+
+		// Выполняем преобразования для разложения
+		for (int i = k + 1; i < n; ++i) {
+			A[i * n + k] /= A[k * n + k];
+			for (int j = k + 1; j < n; ++j) {
+				A[i * n + j] -= A[i * n + k] * A[k * n + j];
 			}
 		}
 	}
-
-	return L;
 }
 
-// Прямой ход для L * y = B
-std::vector<double> ForwardSubstitution(const std::vector<double>& L, const std::vector<double>& B, int n) {
-	std::vector<double> y(n, 0.0);
-
+// Прямая подстановка для решения Ly = Pb
+void forwardSubstitution(const std::vector<double>& A, std::vector<double>& y, const std::vector<double>& Pb, int n) {
 	for (int i = 0; i < n; ++i) {
-		double sum = 0.0;
-		for (int j = 0; j < i; ++j)
-			sum += L[i * n + j] * y[j];
-		y[i] = (B[i] - sum) / L[i * n + i];
+		y[i] = Pb[i];
+		for (int j = 0; j < i; ++j) {
+			y[i] -= A[i * n + j] * y[j];
+		}
 	}
-
-	return y;
 }
 
-// Обратный ход для L^T * x = y
-std::vector<double> BackwardSubstitution(const std::vector<double>& L, const std::vector<double>& y, int n) {
-	std::vector<double> x(n, 0.0);
-
+// Обратная подстановка для решения Ux = y
+void backSubstitution(const std::vector<double>& A, std::vector<double>& x, const std::vector<double>& y, int n) {
 	for (int i = n - 1; i >= 0; --i) {
-		double sum = 0.0;
-		for (int j = i + 1; j < n; ++j)
-			sum += L[j * n + i] * x[j];
-		x[i] = (y[i] - sum) / L[i * n + i];
+		x[i] = y[i];
+		for (int j = i + 1; j < n; ++j) {
+			x[i] -= A[i * n + j] * x[j];
+		}
+		x[i] /= A[i * n + i];
+	}
+}
+
+// Основная функция для решения СЛАУ методом LUP-разложения
+std::vector<double> solveLUP(const std::vector<double>& A, const std::vector<double>& B, int n) {
+	std::vector<double> LU = A;       // Рабочая копия матрицы A
+	std::vector<int> P(n);            // Перестановочный вектор
+	std::vector<double> Pb(n), y(n), x(n);
+
+	// Разложение LUP
+	LUPDecompose(LU, P, n);
+
+	// Преобразуем вектор B с учетом перестановок
+	for (int i = 0; i < n; ++i) {
+		Pb[i] = B[P[i]];
 	}
 
-	return x;
-}
+	// Решаем Ly = Pb
+	forwardSubstitution(LU, y, Pb, n);
 
-// Решение системы AX = B с использованием разложения Холецкого
-std::vector<double> SolveCholesky(const std::vector<double>& A, const std::vector<double>& B, int n) {
-
-	// Разложение A = L * L^T
-	std::vector<double> L = CholeskyDecomposition(A, n);
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			printf("%.1f ", L[i * n + j]);
-		}
-		printf("\n");
-  	}
-
-	// Решение L * y = B
-	std::vector<double> y = ForwardSubstitution(L, B, n);
-
-	// Решение L^T * x = y
-	std::vector<double> x = BackwardSubstitution(L, y, n);
+	// Решаем Ux = y
+	backSubstitution(LU, x, y, n);
 
 	return x;
 }
+
+
 
 std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double>& observations, std::vector<std::vector<double> >& bufers) {
 	std::vector<double> condition(params_num + states_num * params_num),
@@ -267,62 +248,56 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			step = observations[observ_counter * 6] * Y - t;
 			RK4_step(condition, bufers, step);
 			t += step;
-			if (DEBUG) {
-				std::cout << "\n";
-				std::cout << observ_counter << std::endl;
-				std::cout << observations[observ_counter * 6] << std::endl;
-				std::cout << "step " << step << std::endl;
-			}
+#ifdef ITER 
+			std::cout << "\n";
+			std::cout << "Observation number = " << observ_counter << std::endl;
+			std::cout << "Time = " << observations[observ_counter * 6] << std::endl;
+			std::cout << "step = " << step << std::endl;
+#endif
 
-			if (DEBUG) {
-				std::cout << "\n  CONDITION  \n" << std::endl;
-				for (int i = 0; i < condition.size(); i++) {
-					std::cout << std::setprecision(0) << std::setw(7) << condition[i] << " ";
-					if ((i + 1) % 19 == 0) printf("\n");
-				}
-				printf("\n");
-				sleep(1);
+#ifdef DEBUG 
+			std::cout << "\n  CONDITION  \n" << std::endl;
+			for (int i = 0; i < condition.size(); i++) {
+				std::cout << std::setprecision(1) << std::setw(7) << condition[i] << " ";
+				if ((i + 1) % 19 == 0) printf("\n");
 			}
+			printf("\n");
+			Sleep(1000);
+#endif
 
 
 			// RA
-			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5]);
+			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5], 0);
 
-			if (DEBUG) {
-				std::cout << "\n  D G  \n" << std::endl;
-				for (int i = 0; i < dg.size(); i++) {
-					std::cout << std::setprecision(0) << std::setw(7) << dg[i] << " ";
-					if ((i + 1) % 19 == 0) printf("\n");
-				}
-				printf("\n");
-				sleep(1);
+#ifdef DEBUG 
+			std::cout << "\n  D G  \n" << std::endl;
+			for (int i = 0; i < dg.size(); i++) {
+				std::cout << std::setprecision(1) << std::setw(7) << dg[i] << " ";
+				if ((i + 1) % 19 == 0) printf("\n");
 			}
+			printf("\n");
+			Sleep(1000);
+#endif
 
 			for (int i = 0; i < params_num; i++) {	// line of A matrix -(dg/dx * dx/dP)_k
 				Ak[i] = 0.0;
 				for (int j = 0; j < states_num; j++) {
 					Ak[i] -= dg[j] * condition[j * params_num + i + params_num];
 				}
-				// if (DEBUG) {
-				// 	std::cout << "\n" << i << std::endl;
-				// 	std::cout << "Ak[i] = " << Ak[i] << std::endl;
-				// 	// std::cout << "\nAk[i] = " << Ak[i] << " = " << dg[j] << " * " << condition[j * params_num + i + params_num] << std::endl;
-				// 	sleep(1);
-				// }
 			}
 
-			if (DEBUG) {
-				std::cout << "\n  Ak \n" << std::endl;
-				for (int i = 0; i < Ak.size(); i++) {
-					std::cout << std::setprecision(0) << std::setw(7) << Ak[i] << " ";
-					if ((i + 1) % 19 == 0) printf("\n");
-				}
-				printf("\n");
-				sleep(1);
+#ifdef DEBUG 
+			std::cout << "\n  Ak \n" << std::endl;
+			for (int i = 0; i < Ak.size(); i++) {
+				std::cout << std::setprecision(0) << std::setw(7) << Ak[i] << " ";
+				if ((i + 1) % 19 == 0) printf("\n");
 			}
+			printf("\n");
+			Sleep(1000);
+#endif
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
-				b[i] += Ak[i] / observations[observ_counter * 6 + 3] * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5]));
+				b[i] += Ak[i] / observations[observ_counter * 6 + 3] * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 0));
 			}
 			// b = At * sqrt(w) * r(beta)
 			// At - один столбец k
@@ -331,15 +306,15 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
 				for (int j = 0; j < params_num; j++) {
 					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 6 + 3], 2.0);
-					if (DEBUG) {
-						std::cout << "\nB[i * params_num + j] = " << B[i * params_num + j] << "= " << Ak[i] << " * " << Ak[j] << " / " << pow(observations[observ_counter * 6 + 3], 2.0) << std::endl;
-						sleep(1);
-					}
+#ifdef DEBUG 
+					std::cout << "\nB[i * params_num + j] = " << B[i * params_num + j] << "= " << Ak[i] << " * " << Ak[j] << " / " << pow(observations[observ_counter * 6 + 3], 2.0) << std::endl;
+					Sleep(1000);
+#endif
 				}
 			}
 
 			// Decl
-			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5]);
+			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5], 1);
 			for (int i = 0; i < params_num; i++) {	// line of A matrix -(dg/dx * dx/dP)_k
 				Ak[i] = 0.0;
 				for (int j = 0; j < states_num; j++) {
@@ -348,7 +323,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			}
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
-				b[i] += Ak[i] / observations[observ_counter * 6 + 4] * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5]));
+				b[i] += Ak[i] / observations[observ_counter * 6 + 4] * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 1));
 			}
 
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
@@ -359,7 +334,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 
 			observ_counter++;
 			step = STEP;
-			/*if (DEBUG) {
+			/*#ifdef DEBUG
 				for (int i = 0; i < params_num; i++) {
 					for (int j = 0; j < params_num; j++) {
 						printf("%.3f ", B[i * params_num + j]);
@@ -367,7 +342,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 					printf("\n");
 				}
 			}*/
-			/*if (DEBUG) {
+			/*#ifdef DEBUG
 				for (int i = 0; i < params_num; i++) {
 					printf("%.3f ", b[i]);
 				}
@@ -380,27 +355,35 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		}
 
 	}
-	if (DEBUG) { // матрица B
-		printf("\nB MATRIX\n");
-		for (int i = 0; i < 19*19; i++) {
-			printf("%.0f ", B[i]);
-			if ((i + 1) % 19 == 0) printf("\n");
-		}
-		printf("\n");
+#ifdef DEBUG  // матрица B
+	printf("\nB MATRIX\n");
+	for (int i = 0; i < 19 * 19; i++) {
+		printf("%.0f ", B[i]);
+		if ((i + 1) % 19 == 0) printf("\n");
 	}
-	if (DEBUG) {
-		for (int i = 0; i < params_num; i++) {
-			printf("%.3f ", b[i]);
-		}
-		printf("\n\n");
+	printf("\n");
+#endif
+#ifdef DEBUG 
+	for (int i = 0; i < params_num; i++) {
+		printf("%.3f ", b[i]);
 	}
-	x = SolveCholesky(B, b, params_num);
-	if (DEBUG) {
-		for (int i = 0; i < params_num; i++) {
-			printf("%.3f ", x[i]);
+	printf("\n\n");
+#endif
+	std::vector<double> res(params_num, 0.0);
+	x = solveLUP(B, b, params_num);
+	for (int i = 0; i < params_num; i++) {
+		for (int j = 0; j < params_num; j++) {
+			res[i] += B[i * params_num + j] * x[j];
 		}
-		printf("\n\n");
+		printf("b[i] = %.3le \t res[i] = %.3le \t error = %.3le\n", b[i], res[i], (b[i] - res[i]) / b[i]);
 	}
+
+#ifdef DEBUG 
+	for (int i = 0; i < params_num; i++) {
+		printf("%.3f ", x[i]);
+	}
+	printf("\n\n");
+#endif
 	for (int i = 0; i < params_num; i++) {
 		params[i] -= x[i];
 	}
