@@ -5,9 +5,8 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-#include <unistd.h>
-// #include <Windows.h>
-// #include <unistd>
+//#include <unistd.h>
+#include <Windows.h>
 
 #define ITER
 #define DEBUG
@@ -17,17 +16,13 @@ const int params_num = states_num + 1; // states + mass BH
 const int observation_num = 33 + 29 + 26; // alpha, delta for each observation of three stars
 const double RAD_TO_ARCSECONDS = 206264.8;
 const double C = 299792458.0;
-const double start_time = 1995.0;
+const double start_time = 2000.0;
 const double end_time = 2016.0;
 const double Y = 31558149.0;
 const double STEP = Y / 10000.0;
 const std::vector<double> BH_cart = { -1.4388065248297531e+19, -2.2977127354968464e+20, -1.2758089026580264e+20 };
 const std::vector<double> BH_eq = { 959100.7014, -104377.4682 };
 
-
-// FILE* fp_S2 = fopen("S2_debug.txt", "w");
-// 				FILE* fp_S38 = fopen("S38_debug.txt", "w");
-// 				FILE* fp_S55 = fopen("S55_debug.txt", "w");
 
 std::vector<double> F(std::vector<double>& condition) {
 	std::vector<double> result(params_num + states_num * params_num, 0.0),
@@ -243,10 +238,6 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		dg(states_num, 0.0),
 		Ak(params_num, 0.0);
 
-				FILE* fp_S2 = fopen("S2_debug.txt", "w");
-				FILE* fp_S38 = fopen("S38_debug.txt", "w");
-				FILE* fp_S55 = fopen("S55_debug.txt", "w");
-
 	for (int i = 0; i < params_num; i++) condition[i] = params[i];
 	for (int i = 0; i < states_num; i++) {
 		condition[i * params_num + i + params_num] = 1.0;
@@ -261,19 +252,12 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			// step = 0.0;
 			RK4_step(condition, bufers, step);
 
-				// fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
-				// fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
-				// fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
-
 			t += step;
 #ifdef ITER 
-			std::cout << "\n";
-			std::cout << "Observation number = " << observ_counter << std::endl;
-			std::cout << "Time = " << observations[observ_counter * 6] << std::endl;
-			std::cout << "step = " << step << std::endl;
+			printf("\nObservation number = %d \nTime = %.3f \nstep = %.3f\n", observ_counter, observations[observ_counter * 6], step);
 #endif
 
-#ifdef DEBUG 
+#ifdef DEBUG2
 			std::cout << "\n  CONDITION  \n" << std::endl;
 			for (int i = 0; i < condition.size(); i++) {
 				std::cout << std::setprecision(1) << std::setw(7) << condition[i] << " ";
@@ -287,7 +271,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			// RA
 			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5], 0);
 
-#ifdef DEBUG 
+#ifdef DEBUG2
 			std::cout << "\n  D G  \n" << std::endl;
 			for (int i = 0; i < dg.size(); i++) {
 				std::cout << std::setprecision(1) << std::setw(7) << dg[i] << " ";
@@ -304,7 +288,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				}
 			}
 
-#ifdef DEBUG 
+#ifdef DEBUG2
 			std::cout << "\n  Ak \n" << std::endl;
 			for (int i = 0; i < Ak.size(); i++) {
 				std::cout << std::setprecision(0) << std::setw(7) << Ak[i] << " ";
@@ -324,8 +308,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
 				for (int j = 0; j < params_num; j++) {
 					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 6 + 3], 2.0);
-					// if (Ak[i] == 0 || Ak[j] == 0)  B[i * params_num + j] = 0.0;
-#ifdef EBUG 
+#ifdef DEBUG3 
 					std::cout << "\nB[i * params_num + j] = " << B[i * params_num + j] << "= " << Ak[i] << " * " << Ak[j] << " / " << pow(observations[observ_counter * 6 + 3], 2.0) << std::endl;
 					// sleep(1);
 #endif
@@ -370,54 +353,39 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		}
 		else {
 			RK4_step(condition, bufers, step);
-				fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
-				fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
-				fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
 			t += step;
 		}
 
 	}
 #ifdef DEBUG  // матрица B
-	// printf("\n   B MATRIX\n");
-	// for (int i = 0; i < 19 * 19; i++) {
-	// 	printf("%.0f ", B[i]);
-	// 	if ((i + 1) % 19 == 0) printf("\n");
-	// }
-	// printf("\n");
-
-			std::cout << "\n  B MATRIX  \n" << std::endl;
-			for (int i = 0; i < B.size(); i++) {
-				std::cout << std::setprecision(1) << std::setw(7) << B[i] << " ";
-				if ((i + 1) % 19 == 0) printf("\n");
-			}
-			printf("\n");
-			// sleep(1);
+	std::cout << "\n  B MATRIX  \n" << std::endl;
+	for (int i = 0; i < B.size(); i++) {
+		std::cout << std::setprecision(1) << std::setw(7) << B[i] << " ";
+		if ((i + 1) % 19 == 0) printf("\n");
+	}
+	printf("\n");
+	// sleep(1);
 #endif
 #ifdef DEBUG 
-	// printf("\n   b MATRIX\n");
-	// for (int i = 0; i < params_num; i++) {
-	// 	printf("%.3f ", b[i]);
-	// }
-	// printf("\n\n");
-			std::cout << "\n  b MATRIX  \n" << std::endl;
-			for (int i = 0; i < b.size(); i++) {
-				std::cout << std::setprecision(1) << std::setw(7) << b[i] << " ";
-				if ((i + 1) % 19 == 0) printf("\n");
-			}
-			printf("\n");
+	std::cout << "\n  b vector  \n" << std::endl;
+	for (int i = 0; i < b.size(); i++) {
+		std::cout << std::setprecision(1) << std::setw(7) << b[i] << " ";
+		if ((i + 1) % 19 == 0) printf("\n");
+	}
+	printf("\n");
 
 #endif
 
-	std::vector<double> res(params_num, 0.0);
+	std::vector<double> b_check(params_num, 0.0);
 	x = solveLUP(B, b, params_num);
 	for (int i = 0; i < params_num; i++) {
 		for (int j = 0; j < params_num; j++) {
-			res[i] += B[i * params_num + j] * x[j];
+			b_check[i] += B[i * params_num + j] * x[j];
 		}
-		printf("b[i] = %.3le \t res[i] = %.3le \t error = %.3le\n", b[i], res[i], (b[i] - res[i]) / b[i]);
+		printf("b[i] = %.3le \t b_check[i] = %.3le \t error = %.3le\n", b[i], b_check[i], (b[i] - b_check[i]) / b[i]);
 	}
 
-#ifdef DEBUG 
+#ifdef DEBUG2
 	printf("\n   X solve\n");
 	for (int i = 0; i < params_num; i++) {
 		printf("%.3f ", x[i]);
@@ -466,7 +434,7 @@ int main() {
 	// 	std::cout << observations[i] << " ";
 	// }
 	// std::cout << "\n" << std::endl;
-	read_file_into_vector("Initial parameters.txt", params);
+	read_file_into_vector("Initial parameters 2000.txt", params);
 	// for (int i = 0; i < params.size(); i++) {
 	// 	std::cout << params[i] << " ";
 	// }
@@ -475,7 +443,6 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		printf("BH mass = %.16le\n", params[18]);
 		params = Gauss_Newton(params, observations, bufers);
-		printf("BH mass = %.16le\n", params[18]);
 		// std::cout << " " << std::endl;
 	}
 
