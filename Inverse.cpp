@@ -324,7 +324,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
 				for (int j = 0; j < params_num; j++) {
 					B[i * params_num + j] += Ak[i] * Ak[j] / pow(observations[observ_counter * 6 + 3], 2.0);
-					if (Ak[i] == 0 || Ak[j] == 0)  B[i * params_num + j] = 0.0;
+					// if (Ak[i] == 0 || Ak[j] == 0)  B[i * params_num + j] = 0.0;
 #ifdef EBUG 
 					std::cout << "\nB[i * params_num + j] = " << B[i * params_num + j] << "= " << Ak[i] << " * " << Ak[j] << " / " << pow(observations[observ_counter * 6 + 3], 2.0) << std::endl;
 					// sleep(1);
