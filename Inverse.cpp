@@ -8,8 +8,8 @@
 // #include <unistd.h>
 // #include <Windows.h>
 
-#define ITER
-#define DEBUG
+// #define ITER
+// #define DEBUG
 const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
 const int params_num = states_num + 1; // states + mass BH
@@ -92,6 +92,7 @@ std::vector<double> F(std::vector<double>& condition) {
 }
 
 
+
 void RK4_step(std::vector<double>& condition, std::vector<std::vector<double> >& bufers, double h)
 {
 	std::vector<double> conditionBuf = bufers[0], k1 = bufers[1], k2 = bufers[2], k3 = bufers[3];
@@ -121,11 +122,11 @@ double g(std::vector<double>& condition, int observ_counter, int k, int func_num
 
 	if (func_num == 0) {
 		double alpha = atan2(y, x);
-		return alpha * RAD_TO_ARCSECONDS - BH_eq[0];
+		return -(alpha * RAD_TO_ARCSECONDS - BH_eq[0] + 360 * 3600);
 	}
 	if (func_num == 1) {
 		double delta = asin(z / r);
-		return delta * RAD_TO_ARCSECONDS - BH_eq[1];
+		return -(delta * RAD_TO_ARCSECONDS - BH_eq[1]);
 	}
 	return 0;
 }
@@ -140,13 +141,18 @@ std::vector<double> dgdx(std::vector<double>& condition, int observ_counter, int
 	double r = sqrt(x * x + y * y + z * z);
 
 	if (func_num == 0) {
-		result[k * 3] = -y / (x * x + y * y) * RAD_TO_ARCSECONDS;
-		result[k * 3 + 1] = x / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		// result[k * 3] = -y / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		// result[k * 3 + 1] = x / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		result[k * 3] = y / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 1] = -x / (x * x + y * y) * RAD_TO_ARCSECONDS;
 	}
 	if (func_num == 1) {
-		result[k * 3] = -z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
-		result[k * 3 + 1] = -z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
-		result[k * 3 + 2] = (x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		// result[k * 3] = -z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		// result[k * 3 + 1] = -z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		// result[k * 3 + 2] = (x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3] = z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 1] = z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 2] = -(x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
 	}
 
 	return result;
@@ -238,9 +244,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		dg(states_num, 0.0),
 		Ak(params_num, 0.0);
 
-				FILE* fp_S2 = fopen("S2_debug.txt", "w");
-				FILE* fp_S38 = fopen("S38_debug.txt", "w");
-				FILE* fp_S55 = fopen("S55_debug.txt", "w");
+				// FILE* fp_S2 = fopen("S2_debug.txt", "w");
+				// FILE* fp_S38 = fopen("S38_debug.txt", "w");
+				// FILE* fp_S55 = fopen("S55_debug.txt", "w");
 
 	for (int i = 0; i < params_num; i++) condition[i] = params[i];
 	for (int i = 0; i < states_num; i++) {
@@ -257,9 +263,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			RK4_step(condition, bufers, step);
 
 			t += step;
-			fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
-				fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
-				fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
+			// fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
+			// 	fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
+			// 	fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
 #ifdef ITER 
 			printf("\nObservation number = %d \nTime = %.3f \nstep = %.3f\n", observ_counter, observations[observ_counter * 6], step);
 #endif
@@ -306,7 +312,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 #endif
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
-				b[i] += Ak[i] / observations[observ_counter * 6 + 3] * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 0));
+				b[i] += Ak[i] / pow(observations[observ_counter * 6 + 3], 2.0) * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 0));
 			}
 			// b = At * sqrt(w) * r(beta)
 			// At - один столбец k
@@ -332,7 +338,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			}
 
 			for (int i = 0; i < params_num; i++) {	// A * Wsqrd * r
-				b[i] += Ak[i] / observations[observ_counter * 6 + 4] * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 1));
+				b[i] += Ak[i] / pow(observations[observ_counter * 6 + 4], 2.0) * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 1));
 			}
 
 			for (int i = 0; i < params_num; i++) {	// AT * W * A
@@ -361,9 +367,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		else {
 			RK4_step(condition, bufers, step);
 			t += step;
-			fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
-				fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
-				fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
+			// fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
+			// 	fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
+			// 	fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
 		}
 
 	}
@@ -388,12 +394,12 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 
 	std::vector<double> b_check(params_num, 0.0);
 	x = solveLUP(B, b, params_num);
-	for (int i = 0; i < params_num; i++) {
-		for (int j = 0; j < params_num; j++) {
-			b_check[i] += B[i * params_num + j] * x[j];
-		}
-		printf("b[i] = %.3le \t b_check[i] = %.3le \t error = %.3le\n", b[i], b_check[i], (b[i] - b_check[i]) / b[i]);
-	}
+	// for (int i = 0; i < params_num; i++) {
+	// 	for (int j = 0; j < params_num; j++) {
+	// 		b_check[i] += B[i * params_num + j] * x[j];
+	// 	}
+	// 	printf("b[i] = %.3le \t b_check[i] = %.3le \t error = %.3le\n", b[i], b_check[i], (b[i] - b_check[i]) / b[i]);
+	// }
 
 #ifdef DEBUG2
 	printf("\n   X solve\n");
@@ -450,10 +456,12 @@ int main() {
 	// }
 	// std::cout << std::endl;
 
-	for (int i = 0; i < 1; i++) {
-		printf("BH mass = %.16le\n", params[18]);
+	printf("BH mass = %.16le\n", params[18]);
+	
+	for (int i = 0; i < 10; i++) {
+		printf("\n\nITER %d\n\n", i);
 		params = Gauss_Newton(params, observations, bufers);
-		// std::cout << " " << std::endl;
+		printf("BH mass = %.16le\n", params[18]);
 	}
 
 

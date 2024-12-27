@@ -9,8 +9,8 @@
 #include <unistd.h>
 
 #define ITER
-#define G_DERIV
-#define X_DERIV
+// #define G_DERIV
+// #define X_DERIV
 const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
 const int params_num = states_num + 1; // states + mass BH
@@ -121,11 +121,11 @@ double g(std::vector<double>& condition, int observ_counter, int k, int func_num
 
 	if (func_num == 0) {
 		double alpha = atan2(y, x);
-		return alpha * RAD_TO_ARCSECONDS - BH_eq[0];
+		return -(alpha * RAD_TO_ARCSECONDS - BH_eq[0] + 360*3600);
 	}
 	if (func_num == 1) {
 		double delta = asin(z / r);
-		return delta * RAD_TO_ARCSECONDS - BH_eq[1];
+		return -(delta * RAD_TO_ARCSECONDS - BH_eq[1]);
 	}
 	return 0;
 }
@@ -140,13 +140,18 @@ std::vector<double> dgdx(std::vector<double>& condition, int observ_counter, int
 	double r = sqrt(x * x + y * y + z * z);
 
 	if (func_num == 0) {
-		result[k * 3] = -y / (x * x + y * y) * RAD_TO_ARCSECONDS;
-		result[k * 3 + 1] = x / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		// result[k * 3] = -y / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		// result[k * 3 + 1] = x / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		result[k * 3] = y / (x * x + y * y) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 1] = -x / (x * x + y * y) * RAD_TO_ARCSECONDS;
 	}
 	if (func_num == 1) {
-		result[k * 3] = -z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
-		result[k * 3 + 1] = -z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
-		result[k * 3 + 2] = (x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		// result[k * 3] = -z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		// result[k * 3 + 1] = -z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		// result[k * 3 + 2] = (x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3] = z * x / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 1] = z * y / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
+		result[k * 3 + 2] = -(x * x + y * y) / (pow(r, 3.0) * pow(1 - pow(z / r, 2.0), 1.0 / 2)) * RAD_TO_ARCSECONDS;
 	}
 
 	return result;
@@ -330,6 +335,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			// sleep(1);
 #endif
 			b += Ak[18] / pow(observations[observ_counter * 6 + 3], 2.0) * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 0));
+#ifdef X_DERIV			
+			printf("\n%.5f   %.5f\n", observations[observ_counter * 6 + 1], g(condition, observ_counter, observations[observ_counter * 6 + 5], 0));
+#endif			
 			// b = At * w * r(beta)
 			// At - один столбец k
 			// r - одна невязка r[i]
@@ -347,7 +355,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			}
 
 			b += Ak[18] / pow(observations[observ_counter * 6 + 4], 2.0) * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 1));
-
+#ifdef X_DERIV
+			printf("\n%.5f   %.5f\n", observations[observ_counter * 6 + 2], g(condition, observ_counter, observations[observ_counter * 6 + 5], 1));
+#endif
 			B += Ak[18] * Ak[18] / pow(observations[observ_counter * 6 + 4], 2.0);
 
 			observ_counter++;
@@ -392,7 +402,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 	printf("\n\n");
 #endif
 
-	printf("b = %.3le   B = %.3le\n", b, B);
+	printf("\nb = %.3le   B = %.3le\n", b, B);
 	params[18] -= b / B;
 
 
@@ -432,10 +442,13 @@ int main() {
 	read_file_into_vector("Observations.txt", observations);
 	read_file_into_vector("Initial parameters 2000.txt", params);
 
+	params[18] += 2.0e26;
+
 	// usually 10 iterations, but 3 are enough for a file
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 10; i++) {
 		printf("\n\nITER %d\n\nBH mass = %.16le", i, params[18]);
 		params = Gauss_Newton(params, observations, bufers);
+		printf("BH mass = %.16le\n", params[18]);
 	}
 
 	return 0;
