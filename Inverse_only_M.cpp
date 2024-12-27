@@ -295,17 +295,17 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				Ak2[i] = 0.0;
 				for (int j = 0; j < states_num; j++) {
 					Ak[i] -= dg[j] * condition[j * params_num + i + params_num];
-					Ak2[i] -= dg[j] * condition[j * params_num + i + params_num];
+					Ak2[i] -= dg[j] * condition2[j * params_num + i + params_num];
 				}
 			}
 #ifdef X_DERIV
 			std::cout << "State derive from integration:     " << std::endl;
 			for (int i = 0; i < 18; i++) {
-				std::cout << std::setprecision(1) << std::setw(7) << condition[i * params_num + 18 + params_num] << " ";
+				std::cout << std::setprecision(3) << std::setw(10) << condition[i * params_num + 18 + params_num] << " ";
 			}
 			std::cout << "\nState derive from numerical diff:  " << std::endl;
 			for (int i = 0; i < 18; i++) {
-				std::cout << std::setprecision(1) << std::setw(7) << (condition2[i] - condition[i]) / dM << " ";
+				std::cout << std::setprecision(3) << std::setw(10) << (condition2[i] - condition[i]) / dM << " ";
 			}
 			std::cout << "\n";
 			// Sleep(1000);
@@ -313,9 +313,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 #endif
 #ifdef G_DERIV
 			std::cout << "G derive from integration:     ";
-			std::cout << std::setprecision(1) << std::setw(7) << Ak[18] << " ";
+			std::cout << std::setprecision(3) << std::setw(7) << Ak[18] << " ";
 			std::cout << "\nG derive from numerical diff:  ";
-			std::cout << std::setprecision(1) << std::setw(7) << (g(condition, observ_counter, observations[observ_counter * 6 + 5], 0) - g(condition2, observ_counter, observations[observ_counter * 6 + 5], 0)) / dM << " ";
+			std::cout << std::setprecision(3) << std::setw(7) << (g(condition, observ_counter, observations[observ_counter * 6 + 5], 0) - g(condition2, observ_counter, observations[observ_counter * 6 + 5], 0)) / dM << " ";
 			// Sleep(1000);
 			// sleep(1);
 #endif
