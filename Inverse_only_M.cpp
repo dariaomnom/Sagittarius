@@ -5,9 +5,12 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-#include <Windows.h>
+// #include <Windows.h>
+#include <unistd.h>
 
 #define ITER
+#define G_DERIV
+#define X_DERIV
 const int stars_num = 3; // S2, S38, S55
 const int states_num = 6 * 3; // (3 coords + 3 velocities) * 3 stars
 const int params_num = states_num + 1; // states + mass BH
@@ -238,6 +241,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		Ak2(params_num, 0.0);
 	double B = 0, b = 0;
 	double dM = 1e18;
+
 	for (int i = 0; i < params_num; i++) {
 		condition[i] = params[i];
 		condition2[i] = params[i];
@@ -246,6 +250,7 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 	for (int i = 0; i < states_num; i++) {
 		condition[i * params_num + i + params_num] = 1.0;
 	}
+
 	double t = start_time * Y;
 	double step = STEP;
 	int observ_counter = 0;
@@ -257,12 +262,10 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			RK4_step(condition2, bufers, step);
 			t += step;
 #ifdef ITER 
-			std::cout << "\n";
-			std::cout << "Observation number = " << observ_counter << std::endl;
+			std::cout << "\n\nObservation number = " << observ_counter << std::endl;
 			std::cout << "Time = " << observations[observ_counter * 6] << std::endl;
 			std::cout << "step = " << step << std::endl;
 #endif
-
 #ifdef DEBUG 
 			std::cout << "\n  CONDITION  \n" << std::endl;
 			for (int i = 0; i < condition.size(); i++) {
@@ -270,13 +273,13 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				if ((i + 1) % 19 == 0) printf("\n");
 			}
 			printf("\n");
-			Sleep(1000);
+			// Sleep(1000);
+			// sleep(1);
 #endif
 
 
 			// RA
 			dg = dgdx(condition, observ_counter, observations[observ_counter * 6 + 5], 0);
-
 #ifdef DEBUG 
 			std::cout << "\n  D G  \n" << std::endl;
 			for (int i = 0; i < dg.size(); i++) {
@@ -284,9 +287,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				if ((i + 1) % 19 == 0) printf("\n");
 			}
 			printf("\n");
-			Sleep(1000);
+			// Sleep(1000);
+			// sleep(1);
 #endif
-
 			for (int i = 0; i < params_num; i++) {	// line of A matrix -(dg/dx * dx/dP)_k
 				Ak[i] = 0.0;
 				Ak2[i] = 0.0;
@@ -296,22 +299,26 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				}
 			}
 #ifdef X_DERIV
+			std::cout << "State derive from integration:     " << std::endl;
 			for (int i = 0; i < 18; i++) {
 				std::cout << std::setprecision(1) << std::setw(7) << condition[i * params_num + 18 + params_num] << " ";
 			}
-			std::cout << "\n";
+			std::cout << "\nState derive from numerical diff:  " << std::endl;
 			for (int i = 0; i < 18; i++) {
 				std::cout << std::setprecision(1) << std::setw(7) << (condition2[i] - condition[i]) / dM << " ";
 			}
-			Sleep(1000);
+			std::cout << "\n";
+			// Sleep(1000);
+			// sleep(1);
 #endif
 #ifdef G_DERIV
+			std::cout << "G derive from integration:     ";
 			std::cout << std::setprecision(1) << std::setw(7) << Ak[18] << " ";
-			std::cout << "\n";
+			std::cout << "\nG derive from numerical diff:  ";
 			std::cout << std::setprecision(1) << std::setw(7) << (g(condition, observ_counter, observations[observ_counter * 6 + 5], 0) - g(condition2, observ_counter, observations[observ_counter * 6 + 5], 0)) / dM << " ";
-			Sleep(1000);
+			// Sleep(1000);
+			// sleep(1);
 #endif
-
 #ifdef DEBUG 
 			std::cout << "\n  Ak \n" << std::endl;
 			for (int i = 0; i < Ak.size(); i++) {
@@ -319,18 +326,15 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				if ((i + 1) % 19 == 0) printf("\n");
 			}
 			printf("\n");
-			Sleep(1000);
+			// Sleep(1000);
+			// sleep(1);
 #endif
-
-
 			b += Ak[18] / pow(observations[observ_counter * 6 + 3], 2.0) * (observations[observ_counter * 6 + 1] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 0));
-
 			// b = At * w * r(beta)
 			// At - один столбец k
 			// r - одна невязка r[i]
-
-
 			B += Ak[18] * Ak[18] / pow(observations[observ_counter * 6 + 3], 2.0);
+
 
 
 			// Decl
@@ -342,28 +346,12 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 				}
 			}
 
-
 			b += Ak[18] / pow(observations[observ_counter * 6 + 4], 2.0) * (observations[observ_counter * 6 + 2] - g(condition, observ_counter, observations[observ_counter * 6 + 5], 1));
-
 
 			B += Ak[18] * Ak[18] / pow(observations[observ_counter * 6 + 4], 2.0);
 
 			observ_counter++;
 			step = STEP;
-			/*#ifdef DEBUG
-				for (int i = 0; i < params_num; i++) {
-					for (int j = 0; j < params_num; j++) {
-						printf("%.3f ", B[i * params_num + j]);
-					}
-					printf("\n");
-				}
-			}*/
-			/*#ifdef DEBUG
-				for (int i = 0; i < params_num; i++) {
-					printf("%.3f ", b[i]);
-				}
-				printf("\n");
-			}*/
 		}
 		else {
 			RK4_step(condition, bufers, step);
@@ -373,18 +361,20 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 
 	}
 #ifdef DEBUG  // матрица B
-	printf("\nB MATRIX\n");
-	for (int i = 0; i < 19 * 19; i++) {
-		printf("%.0f ", B[i]);
+	std::cout << "\n  B MATRIX  \n" << std::endl;
+	for (int i = 0; i < B.size(); i++) {
+		std::cout << std::setprecision(1) << std::setw(7) << B[i] << " ";
 		if ((i + 1) % 19 == 0) printf("\n");
 	}
 	printf("\n");
 #endif
 #ifdef DEBUG 
-	for (int i = 0; i < params_num; i++) {
-		printf("%.3f ", b[i]);
+	std::cout << "\n  b vector  \n" << std::endl;
+	for (int i = 0; i < b.size(); i++) {
+		std::cout << std::setprecision(1) << std::setw(7) << b[i] << " ";
+		if ((i + 1) % 19 == 0) printf("\n");
 	}
-	printf("\n\n");
+	printf("\n");
 #endif
 	std::vector<double> res(params_num, 0.0);
 	//x = solveLUP(B, b, params_num);
@@ -401,7 +391,8 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 	}
 	printf("\n\n");
 #endif
-	printf("%.3le %.3le\n", b, B);
+
+	printf("b = %.3le   B = %.3le\n", b, B);
 	params[18] -= b / B;
 
 
@@ -439,37 +430,13 @@ int main() {
 	std::vector<std::vector<double> > bufers = { bufers1, bufers2, bufers3, bufers4 };
 
 	read_file_into_vector("Observations.txt", observations);
-	// for (int i = 0; i < observations.size(); i++) {
-	// 	std::cout << observations[i] << " ";
-	// }
-	// std::cout << "\n" << std::endl;
 	read_file_into_vector("Initial parameters 2000.txt", params);
-	// for (int i = 0; i < params.size(); i++) {
-	// 	std::cout << params[i] << " ";
-	// }
-	// std::cout << std::endl;
 
-	for (int i = 0; i < 10; i++) {
-		printf("BH mass = %.16le\n", params[18]);
+	// usually 10 iterations, but 3 are enough for a file
+	for (int i = 0; i < 3; i++) {
+		printf("\n\nITER %d\n\nBH mass = %.16le", i, params[18]);
 		params = Gauss_Newton(params, observations, bufers);
-		// std::cout << " " << std::endl;
 	}
-
-
-	/*std::vector<double> result = F(dxdP);
-
-	for (int i = 0; i < 19; i++) {
-		printf("%.3f ", result[i]);
-	}
-	for (int i = 0; i < 18; ++i) {
-		for (int j = 0; j < 19; ++j) {
-			printf("%.3f ", result[i * 19 + j + 19]);
-		}
-		printf("\n\n");
-	}
-	for (int i = 0; i < 19; i++) {
-		printf("%.3f ", result[i]);
-	}*/
 
 	return 0;
 }

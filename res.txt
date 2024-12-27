@@ -1,0 +1,2655 @@
+
+
+ITER 0
+
+BH mass = 5.3631675656960007e+26
+
+Observation number = 0
+Time = 2002.58
+step = 3155.73
+State derive from integration:     
+ -1e-13   3e-13  -2e-13  -1e-13   2e-14  -1e-13  -1e-14  -6e-15  -8e-14   3e-20   1e-20   7e-21  -3e-21   1e-21  -6e-21  -2e-22  -1e-22  -2e-21 
+State derive from numerical diff:  
+ -1e-13   3e-13  -2e-13  -1e-13   2e-14  -1e-13  -1e-14  -6e-15  -8e-14   3e-20   1e-20   7e-21  -3e-21   1e-21  -6e-21  -2e-22  -1e-22  -2e-21 
+G derive from integration:       1e-28 
+G derive from numerical diff:    2e-28 
+
+Observation number = 1
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  2e-13   3e-13  -7e-14   2e-13   1e-13  -5e-13  -1e-14  -9e-15  -1e-13   6e-21  -8e-22   3e-21   4e-20  -4e-22   1e-20  -3e-23  -6e-23  -3e-21 
+State derive from numerical diff:  
+  1e-13   3e-13  -8e-14   2e-13   1e-13  -5e-13  -1e-14  -9e-15  -1e-13   5e-21  -7e-22   3e-21   4e-20  -4e-22   1e-20  -3e-23  -6e-23  -3e-21 
+G derive from integration:      -1e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 2
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  2e-13   3e-13  -7e-14   2e-13   1e-13  -5e-13  -1e-14  -9e-15  -1e-13   6e-21  -9e-22   3e-21   4e-20  -8e-22   1e-20  -3e-23  -5e-23  -3e-21 
+State derive from numerical diff:  
+  1e-13   3e-13  -7e-14   2e-13   1e-13  -5e-13  -1e-14  -9e-15  -1e-13   5e-21  -8e-22   3e-21   4e-20  -8e-22   1e-20  -3e-23  -5e-23  -3e-21 
+G derive from integration:      -1e-28 
+G derive from numerical diff:        0 
+
+Observation number = 3
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  3e-13   3e-13   6e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13  -1e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -4e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 4
+Time = 2e+03
+step = -1e-06
+State derive from integration:     
+  3e-13   3e-13   6e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13  -1e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -4e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 5
+Time = 2e+03
+step = -1e-06
+State derive from integration:     
+  3e-13   3e-13   6e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13  -1e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -4e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+G derive from integration:       8e-30 
+G derive from numerical diff:        0 
+
+Observation number = 6
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  3e-13   3e-13   7e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13  -1e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 7
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+  3e-13   3e-13   7e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13  -1e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 8
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+  3e-13   3e-13   7e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13  -1e-15   5e-13   1e-14   8e-14  -1e-14  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -5e-22  -3e-21   9e-21   3e-22   9e-23  -4e-21 
+G derive from integration:       8e-30 
+G derive from numerical diff:        0 
+
+Observation number = 9
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  3e-13   3e-13   1e-14   5e-13   8e-15   1e-13  -9e-15  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -6e-22  -2e-21   9e-21   3e-22   1e-22  -4e-21 
+State derive from numerical diff:  
+  3e-13   3e-13   2e-15   5e-13   8e-15   1e-13  -9e-15  -8e-15  -3e-13   3e-21  -2e-21   2e-21  -6e-22  -2e-21   9e-21   3e-22   1e-22  -4e-21 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 10
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  4e-13   2e-13   6e-14   5e-13  -4e-14   3e-13   3e-15  -4e-15  -4e-13   3e-21  -2e-21   2e-21  -2e-21  -2e-21   6e-21   8e-22   3e-22  -5e-21 
+State derive from numerical diff:  
+  3e-13   2e-13   4e-14   5e-13  -4e-14   2e-13   3e-15  -4e-15  -4e-13   2e-21  -2e-21   2e-21  -2e-21  -2e-21   6e-21   8e-22   3e-22  -5e-21 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 11
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  4e-13   2e-13   6e-14   5e-13  -4e-14   3e-13   3e-15  -4e-15  -4e-13   3e-21  -2e-21   2e-21  -2e-21  -2e-21   6e-21   8e-22   3e-22  -5e-21 
+State derive from numerical diff:  
+  3e-13   2e-13   4e-14   5e-13  -4e-14   2e-13   3e-15  -4e-15  -4e-13   2e-21  -2e-21   2e-21  -2e-21  -2e-21   6e-21   8e-22   3e-22  -5e-21 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 12
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  4e-13   2e-13   6e-14   5e-13  -4e-14   3e-13   3e-15  -4e-15  -4e-13   3e-21  -2e-21   2e-21  -2e-21  -2e-21   6e-21   8e-22   3e-22  -5e-21 
+State derive from numerical diff:  
+  3e-13   2e-13   4e-14   5e-13  -4e-14   2e-13   3e-15  -4e-15  -4e-13   2e-21  -2e-21   2e-21  -2e-21  -2e-21   6e-21   8e-22   3e-22  -5e-21 
+G derive from integration:      -3e-30 
+G derive from numerical diff:        0 
+
+Observation number = 13
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   1e-13   1e-13   4e-13  -9e-14   4e-13   6e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+State derive from numerical diff:  
+  4e-13   2e-13   1e-13   4e-13  -9e-14   4e-13   6e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -2e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 14
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+  5e-13   1e-13   1e-13   4e-13  -9e-14   4e-13   6e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+State derive from numerical diff:  
+  4e-13   2e-13   1e-13   4e-13  -9e-14   4e-13   6e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -2e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 15
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+  5e-13   1e-13   1e-13   4e-13  -9e-14   4e-13   6e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+State derive from numerical diff:  
+  4e-13   2e-13   1e-13   4e-13  -9e-14   4e-13   6e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -2e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+G derive from integration:      -6e-29 
+G derive from numerical diff:        0 
+
+Observation number = 16
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   1e-13   1e-13   4e-13  -1e-13   4e-13   7e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   4e-13   7e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -2e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 17
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+  5e-13   1e-13   1e-13   4e-13  -1e-13   4e-13   7e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   4e-13   7e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -2e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 18
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+  5e-13   1e-13   1e-13   4e-13  -1e-13   4e-13   7e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   4e-13   7e-14   2e-14  -6e-13   2e-21  -3e-21   2e-21  -2e-21  -1e-21   4e-21   3e-21   1e-21  -8e-21 
+G derive from integration:      -6e-29 
+G derive from numerical diff:        0 
+
+Observation number = 19
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   1e-13   2e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -9e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -9e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 20
+Time = 2e+03
+step = -4e-08
+State derive from integration:     
+  5e-13   1e-13   2e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -9e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -9e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 21
+Time = 2e+03
+step = -4e-08
+State derive from integration:     
+  5e-13   1e-13   2e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -9e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   3e-21   1e-21  -9e-21 
+G derive from integration:      -8e-29 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 22
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   1e-13   2e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   4e-21   2e-21  -9e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   4e-21   2e-21  -9e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 23
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  5e-13   1e-13   2e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   4e-21   2e-21  -9e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   4e-21   2e-21  -9e-21 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 24
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  5e-13   1e-13   2e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   4e-21   4e-21   2e-21  -9e-21 
+State derive from numerical diff:  
+  4e-13   1e-13   1e-13   4e-13  -1e-13   5e-13   9e-14   3e-14  -7e-13   2e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   4e-21   2e-21  -9e-21 
+G derive from integration:      -8e-29 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 25
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   1e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   9e-14   2e-13   4e-13  -1e-13   5e-13   1e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 26
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   1e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   9e-14   2e-13   4e-13  -1e-13   5e-13   1e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 27
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   1e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   9e-14   2e-13   4e-13  -1e-13   5e-13   1e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -1e-28 
+G derive from numerical diff:        0 
+
+Observation number = 28
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   9e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 29
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   9e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 30
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   8e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 31
+Time = 2e+03
+step = 7e-07
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   8e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 32
+Time = 2e+03
+step = 7e-07
+State derive from integration:     
+  5e-13   5e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   2e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   8e-14   2e-13   4e-13  -1e-13   5e-13   2e-13   6e-14  -8e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   5e-21   2e-21  -1e-20 
+G derive from integration:      -1e-28 
+G derive from numerical diff:        0 
+
+Observation number = 33
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13   2e-14   2e-13   3e-13  -1e-13   5e-13   2e-13   8e-14  -9e-13   1e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   7e-21   3e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   6e-14   2e-13   3e-13  -1e-13   5e-13   2e-13   8e-14  -9e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   7e-21   3e-21  -1e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 34
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+  5e-13   2e-14   2e-13   3e-13  -1e-13   5e-13   2e-13   8e-14  -9e-13   1e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   7e-21   3e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   6e-14   2e-13   3e-13  -1e-13   5e-13   2e-13   8e-14  -9e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   7e-21   3e-21  -1e-20 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 35
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+  5e-13   2e-14   2e-13   3e-13  -1e-13   5e-13   2e-13   8e-14  -9e-13   1e-21  -4e-21   2e-21  -3e-21  -1e-21   3e-21   7e-21   3e-21  -1e-20 
+State derive from numerical diff:  
+  5e-13   6e-14   2e-13   3e-13  -1e-13   5e-13   2e-13   8e-14  -9e-13   1e-21  -3e-21   2e-21  -3e-21  -1e-21   3e-21   7e-21   3e-21  -1e-20 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 36
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -7e-14   3e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   1e-20   7e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -2e-14   2e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   3e-21   1e-20   7e-21  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 37
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+  5e-13  -7e-14   3e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   1e-20   7e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -2e-14   2e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   3e-21   1e-20   7e-21  -2e-20 
+G derive from integration:      -3e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 38
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+  5e-13  -7e-14   3e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   1e-20   7e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -2e-14   2e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   3e-21   1e-20   7e-21  -2e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 39
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -7e-14   3e-13   3e-13  -2e-13   6e-13   4e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   2e-20   7e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -2e-14   2e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   7e-21  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 40
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+  5e-13  -7e-14   3e-13   3e-13  -2e-13   6e-13   4e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   2e-20   7e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -2e-14   2e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   7e-21  -2e-20 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 41
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+  5e-13  -7e-14   3e-13   3e-13  -2e-13   6e-13   4e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   2e-20   7e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -2e-14   2e-13   3e-13  -1e-13   6e-13   4e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   7e-21  -2e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 42
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -8e-14   3e-13   3e-13  -2e-13   6e-13   5e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   2e-20   8e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -3e-14   2e-13   3e-13  -2e-13   6e-13   5e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   8e-21  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 43
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  5e-13  -8e-14   3e-13   3e-13  -2e-13   6e-13   5e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   2e-20   8e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -3e-14   2e-13   3e-13  -2e-13   6e-13   5e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   8e-21  -2e-20 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 44
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  5e-13  -8e-14   3e-13   3e-13  -2e-13   6e-13   5e-13   2e-13  -1e-12   1e-21  -4e-21   2e-21  -3e-21  -9e-22   3e-21   2e-20   8e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -3e-14   2e-13   3e-13  -2e-13   6e-13   5e-13   2e-13  -1e-12   9e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   8e-21  -2e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 45
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   6e-13   3e-13  -1e-12   9e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   2e-20   1e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -6e-14   2e-13   2e-13  -2e-13   6e-13   6e-13   3e-13  -1e-12   8e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   1e-20  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 46
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   6e-13   3e-13  -1e-12   9e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   2e-20   1e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -6e-14   2e-13   2e-13  -2e-13   6e-13   6e-13   3e-13  -1e-12   8e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   1e-20  -2e-20 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 47
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   6e-13   3e-13  -1e-12   9e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   2e-20   1e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -6e-14   2e-13   2e-13  -2e-13   6e-13   6e-13   3e-13  -1e-12   8e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   2e-20   1e-20  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -7e-28 
+
+Observation number = 48
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   7e-13   3e-13  -1e-12   9e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   3e-20   1e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -7e-14   2e-13   2e-13  -2e-13   6e-13   7e-13   3e-13  -1e-12   7e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   3e-20   1e-20  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 49
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   7e-13   3e-13  -1e-12   9e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   3e-20   1e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -7e-14   2e-13   2e-13  -2e-13   6e-13   7e-13   3e-13  -1e-12   7e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   3e-20   1e-20  -2e-20 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 50
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   7e-13   3e-13  -1e-12   9e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   3e-20   1e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -7e-14   2e-13   2e-13  -2e-13   6e-13   7e-13   3e-13  -1e-12   7e-22  -4e-21   2e-21  -3e-21  -9e-22   2e-21   3e-20   1e-20  -2e-20 
+G derive from integration:      -6e-28 
+G derive from numerical diff:   -7e-28 
+
+Observation number = 51
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   8e-13   4e-13  -2e-12   8e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   3e-20   2e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -9e-14   3e-13   2e-13  -2e-13   6e-13   8e-13   4e-13  -2e-12   7e-22  -4e-21   2e-21  -4e-21  -8e-22   2e-21   3e-20   2e-20  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 52
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   8e-13   4e-13  -2e-12   8e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   3e-20   2e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -9e-14   3e-13   2e-13  -2e-13   6e-13   8e-13   4e-13  -2e-12   7e-22  -4e-21   2e-21  -4e-21  -8e-22   2e-21   3e-20   2e-20  -2e-20 
+G derive from integration:      -2e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 53
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+  5e-13  -1e-13   3e-13   2e-13  -2e-13   6e-13   8e-13   4e-13  -2e-12   8e-22  -5e-21   2e-21  -4e-21  -9e-22   2e-21   3e-20   2e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -9e-14   3e-13   2e-13  -2e-13   6e-13   8e-13   4e-13  -2e-12   7e-22  -4e-21   2e-21  -4e-21  -8e-22   2e-21   3e-20   2e-20  -2e-20 
+G derive from integration:      -7e-28 
+G derive from numerical diff:   -7e-28 
+
+Observation number = 54
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   5e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   3e-20 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   2e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   4e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   3e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 55
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  6e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   5e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   3e-20 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   2e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   4e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   3e-20 
+G derive from integration:      -1e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 56
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   5e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   4e-20 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   4e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   4e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 57
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+  6e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   5e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   4e-20 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   4e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   4e-20 
+G derive from integration:      -1e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 58
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+  6e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   5e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   4e-20 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   2e-12   9e-13  -2e-12   4e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   4e-20 
+G derive from integration:      -2e-27 
+G derive from numerical diff:   -2e-27 
+
+Observation number = 59
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -1e-12   4e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   6e-20   1e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -1e-12   3e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   6e-20   1e-19 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 60
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -1e-12   4e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   6e-20   1e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -1e-12   3e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   6e-20   1e-19 
+G derive from integration:      -1e-28 
+G derive from numerical diff:        0 
+
+Observation number = 61
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -1e-12   4e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   6e-20   1e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -1e-12   3e-22  -5e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   6e-20   1e-19 
+G derive from integration:      -2e-27 
+G derive from numerical diff:   -2e-27 
+
+Observation number = 62
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   3e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   2e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   1e-19   5e-20   2e-19 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 63
+Time = 2e+03
+step = -4e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   3e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   2e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   1e-19   5e-20   2e-19 
+G derive from integration:      -1e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 64
+Time = 2e+03
+step = -4e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   3e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   2e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   1e-19   5e-20   2e-19 
+G derive from integration:      -3e-27 
+G derive from numerical diff:   -3e-27 
+
+Observation number = 65
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   3e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   2e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   1e-19   5e-20   2e-19 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 66
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   3e-22  -6e-21   2e-21  -4e-21  -8e-22   2e-21   1e-19   5e-20   2e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   1e-12  -7e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   1e-19   5e-20   2e-19 
+G derive from integration:      -1e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 67
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -3e-13   4e-13   9e-14  -2e-13   7e-13   3e-12   2e-12   1e-13   3e-22  -6e-21   3e-21  -4e-21  -8e-22   2e-21   3e-20   2e-20   3e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   2e-12   1e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   3e-20   2e-20   3e-19 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 68
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   9e-14  -2e-13   7e-13   3e-12   2e-12   1e-13   3e-22  -6e-21   3e-21  -4e-21  -8e-22   2e-21   3e-20   2e-20   3e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   2e-12   1e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   3e-20   2e-20   3e-19 
+G derive from integration:      -9e-29 
+G derive from numerical diff:        0 
+
+Observation number = 69
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+  6e-13  -3e-13   4e-13   9e-14  -2e-13   7e-13   3e-12   2e-12   1e-13   3e-22  -6e-21   3e-21  -4e-21  -8e-22   2e-21   3e-20   2e-20   3e-19 
+State derive from numerical diff:  
+  5e-13  -2e-13   3e-13   1e-13  -2e-13   7e-13   3e-12   2e-12   1e-13   2e-22  -5e-21   2e-21  -4e-21  -7e-22   2e-21   3e-20   2e-20   3e-19 
+G derive from integration:      -3e-27 
+G derive from numerical diff:   -3e-27 
+
+Observation number = 70
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -5e-13   4e-13  -1e-14  -2e-13   7e-13   9e-13   4e-13   2e-12  -2e-22  -7e-21   3e-21  -5e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -4e-13   4e-13   6e-15  -2e-13   7e-13   9e-13   4e-13   2e-12  -3e-22  -6e-21   2e-21  -4e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 71
+Time = 2e+03
+step = 5e-07
+State derive from integration:     
+  6e-13  -5e-13   4e-13  -1e-14  -2e-13   7e-13   9e-13   4e-13   2e-12  -2e-22  -7e-21   3e-21  -5e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -4e-13   4e-13   6e-15  -2e-13   7e-13   9e-13   4e-13   2e-12  -3e-22  -6e-21   2e-21  -4e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+G derive from integration:      -2e-30 
+G derive from numerical diff:        0 
+
+Observation number = 72
+Time = 2e+03
+step = 5e-07
+State derive from integration:     
+  6e-13  -5e-13   4e-13  -1e-14  -2e-13   7e-13   9e-13   4e-13   2e-12  -2e-22  -7e-21   3e-21  -5e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -4e-13   4e-13   6e-15  -2e-13   7e-13   9e-13   4e-13   2e-12  -3e-22  -6e-21   2e-21  -4e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+G derive from integration:      -7e-28 
+G derive from numerical diff:   -9e-28 
+
+Observation number = 73
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  6e-13  -5e-13   4e-13  -1e-14  -2e-13   7e-13   8e-13   4e-13   2e-12  -2e-22  -7e-21   3e-21  -5e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -4e-13   4e-13   5e-15  -2e-13   7e-13   8e-13   4e-13   2e-12  -3e-22  -6e-21   2e-21  -4e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 74
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+  6e-13  -5e-13   4e-13  -1e-14  -2e-13   7e-13   8e-13   4e-13   2e-12  -2e-22  -7e-21   3e-21  -5e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -4e-13   4e-13   5e-15  -2e-13   7e-13   8e-13   4e-13   2e-12  -3e-22  -6e-21   2e-21  -4e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+G derive from integration:      -4e-31 
+G derive from numerical diff:        0 
+
+Observation number = 75
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+  6e-13  -5e-13   4e-13  -1e-14  -2e-13   7e-13   8e-13   4e-13   2e-12  -2e-22  -7e-21   3e-21  -5e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+State derive from numerical diff:  
+  5e-13  -4e-13   4e-13   5e-15  -2e-13   7e-13   8e-13   4e-13   2e-12  -3e-22  -6e-21   2e-21  -4e-21  -7e-22   1e-21  -7e-20  -3e-20  -2e-20 
+G derive from integration:      -7e-28 
+G derive from numerical diff:   -7e-28 
+
+Observation number = 76
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -7e-13   5e-13  -2e-13  -2e-13   8e-13  -2e-13  -6e-14   2e-12  -1e-21  -8e-21   3e-21  -5e-21  -6e-22   1e-21  -2e-20  -8e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -6e-13   4e-13  -1e-13  -2e-13   8e-13  -2e-13  -5e-14   2e-12  -1e-21  -7e-21   2e-21  -5e-21  -6e-22   9e-22  -2e-20  -8e-21  -2e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 77
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  5e-13  -7e-13   5e-13  -2e-13  -2e-13   8e-13  -2e-13  -6e-14   2e-12  -1e-21  -8e-21   3e-21  -5e-21  -6e-22   1e-21  -2e-20  -8e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -6e-13   4e-13  -1e-13  -2e-13   8e-13  -2e-13  -5e-14   2e-12  -1e-21  -7e-21   2e-21  -5e-21  -6e-22   9e-22  -2e-20  -8e-21  -2e-20 
+G derive from integration:       1e-28 
+G derive from numerical diff:    2e-28 
+
+Observation number = 78
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+  5e-13  -7e-13   5e-13  -2e-13  -2e-13   8e-13  -2e-13  -6e-14   2e-12  -1e-21  -8e-21   3e-21  -5e-21  -6e-22   1e-21  -2e-20  -8e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -6e-13   4e-13  -1e-13  -2e-13   8e-13  -2e-13  -5e-14   2e-12  -1e-21  -7e-21   2e-21  -5e-21  -6e-22   9e-22  -2e-20  -8e-21  -2e-20 
+G derive from integration:       2e-28 
+G derive from numerical diff:    2e-28 
+
+Observation number = 79
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  5e-13  -1e-12   6e-13  -3e-13  -2e-13   8e-13  -5e-13  -2e-13   1e-12  -2e-21  -1e-20   3e-21  -6e-21  -5e-22   5e-22  -6e-21  -3e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -8e-13   5e-13  -3e-13  -2e-13   8e-13  -5e-13  -2e-13   1e-12  -2e-21  -9e-21   3e-21  -6e-21  -5e-22   4e-22  -6e-21  -3e-21  -1e-20 
+G derive from integration:      -5e-28 
+G derive from numerical diff:   -5e-28 
+
+Observation number = 80
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+  5e-13  -1e-12   6e-13  -3e-13  -2e-13   8e-13  -5e-13  -2e-13   1e-12  -2e-21  -1e-20   3e-21  -6e-21  -5e-22   5e-22  -6e-21  -3e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -8e-13   5e-13  -3e-13  -2e-13   8e-13  -5e-13  -2e-13   1e-12  -2e-21  -9e-21   3e-21  -6e-21  -5e-22   4e-22  -6e-21  -3e-21  -1e-20 
+G derive from integration:       3e-28 
+G derive from numerical diff:    2e-28 
+
+Observation number = 81
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+  5e-13  -1e-12   6e-13  -3e-13  -2e-13   8e-13  -5e-13  -2e-13   1e-12  -2e-21  -1e-20   3e-21  -6e-21  -5e-22   5e-22  -6e-21  -3e-21  -2e-20 
+State derive from numerical diff:  
+  5e-13  -8e-13   5e-13  -3e-13  -2e-13   8e-13  -5e-13  -2e-13   1e-12  -2e-21  -9e-21   3e-21  -6e-21  -5e-22   4e-22  -6e-21  -3e-21  -1e-20 
+G derive from integration:       4e-28 
+G derive from numerical diff:    5e-28 
+
+Observation number = 82
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+  4e-13  -1e-12   7e-13  -5e-13  -3e-13   8e-13  -7e-13  -3e-13   8e-13  -4e-21  -1e-20   4e-21  -7e-21  -4e-22  -2e-22  -3e-21  -2e-21  -1e-20 
+State derive from numerical diff:  
+  4e-13  -1e-12   6e-13  -5e-13  -3e-13   8e-13  -6e-13  -3e-13   8e-13  -4e-21  -1e-20   3e-21  -6e-21  -4e-22  -2e-22  -2e-21  -1e-21  -1e-20 
+G derive from integration:      -4e-28 
+G derive from numerical diff:   -2e-28 
+
+Observation number = 83
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+  4e-13  -1e-12   7e-13  -5e-13  -3e-13   8e-13  -7e-13  -3e-13   8e-13  -4e-21  -1e-20   4e-21  -7e-21  -4e-22  -2e-22  -3e-21  -2e-21  -1e-20 
+State derive from numerical diff:  
+  4e-13  -1e-12   6e-13  -5e-13  -3e-13   8e-13  -6e-13  -3e-13   8e-13  -4e-21  -1e-20   3e-21  -6e-21  -4e-22  -2e-22  -2e-21  -1e-21  -1e-20 
+G derive from integration:       5e-28 
+G derive from numerical diff:    5e-28 
+
+Observation number = 84
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+  4e-13  -1e-12   7e-13  -5e-13  -3e-13   8e-13  -7e-13  -3e-13   8e-13  -4e-21  -1e-20   4e-21  -7e-21  -4e-22  -2e-22  -3e-21  -2e-21  -1e-20 
+State derive from numerical diff:  
+  4e-13  -1e-12   6e-13  -5e-13  -3e-13   8e-13  -6e-13  -3e-13   8e-13  -4e-21  -1e-20   3e-21  -6e-21  -4e-22  -2e-22  -2e-21  -1e-21  -1e-20 
+G derive from integration:       6e-28 
+G derive from numerical diff:    5e-28 
+
+Observation number = 85
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -2e-13  -3e-12   1e-12  -1e-12  -3e-13   7e-13  -7e-13  -3e-13  -4e-14  -2e-20  -3e-20   5e-21  -9e-21  -4e-23  -2e-21   2e-23  -2e-22  -1e-20 
+State derive from numerical diff:  
+ -2e-13  -2e-12   9e-13  -1e-12  -3e-13   7e-13  -7e-13  -3e-13   5e-14  -2e-20  -3e-20   4e-21  -9e-21  -2e-23  -2e-21   3e-22  -3e-23  -1e-20 
+G derive from integration:       6e-29 
+G derive from numerical diff:        0 
+
+Observation number = 86
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -2e-13  -3e-12   1e-12  -1e-12  -3e-13   7e-13  -7e-13  -3e-13  -4e-14  -2e-20  -3e-20   5e-21  -9e-21  -4e-23  -2e-21   2e-23  -2e-22  -1e-20 
+State derive from numerical diff:  
+ -2e-13  -2e-12   9e-13  -1e-12  -3e-13   7e-13  -7e-13  -3e-13   5e-14  -2e-20  -3e-20   4e-21  -9e-21  -2e-23  -2e-21   3e-22  -3e-23  -1e-20 
+G derive from integration:       9e-28 
+G derive from numerical diff:    7e-28 
+
+Observation number = 87
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -2e-13  -3e-12   1e-12  -1e-12  -3e-13   7e-13  -7e-13  -3e-13  -4e-14  -2e-20  -3e-20   5e-21  -9e-21  -4e-23  -2e-21   2e-23  -2e-22  -1e-20 
+State derive from numerical diff:  
+ -2e-13  -2e-12   9e-13  -1e-12  -3e-13   7e-13  -7e-13  -3e-13   5e-14  -2e-20  -3e-20   4e-21  -9e-21  -2e-23  -2e-21   3e-22  -3e-23  -1e-20 
+G derive from integration:       6e-28 
+G derive from numerical diff:    5e-28 b = -4.411e-14   B = 2.982e-47
+
+
+ITER 1
+
+BH mass = 1.4795677487664296e+33
+
+Observation number = 0
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -3e-18  -6e-18   1e-18  -4e-18   4e-19  -3e-18  -1e-18  -8e-19  -6e-18  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 1
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -4e-18  -8e-18   2e-18  -6e-18   5e-19  -3e-18  -2e-18  -1e-18  -8e-18  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 2
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -4e-18  -8e-18   2e-18  -6e-18   6e-19  -3e-18  -2e-18  -1e-18  -8e-18  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 3
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 4
+Time = 2e+03
+step = -1e-06
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 5
+Time = 2e+03
+step = -1e-06
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 6
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 7
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 8
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 9
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -5e-18  -1e-17   2e-18  -8e-18   7e-19  -4e-18  -3e-18  -1e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0   7e-05  0.0006   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 10
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -6e-18  -1e-17   2e-18  -9e-18   8e-19  -5e-18  -3e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:    1e-28 
+
+Observation number = 11
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -6e-18  -1e-17   2e-18  -9e-18   8e-19  -5e-18  -3e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 12
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -6e-18  -1e-17   2e-18  -9e-18   8e-19  -5e-18  -3e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0001  0.0006 -0.0001  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 13
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -7e-18  -1e-17   3e-18  -1e-17   1e-18  -6e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006 -0.0001  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 14
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+ -7e-18  -1e-17   3e-18  -1e-17   1e-18  -6e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006 -0.0001  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 15
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+ -7e-18  -1e-17   3e-18  -1e-17   1e-18  -6e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006 -0.0001  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 16
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -7e-18  -1e-17   3e-18  -1e-17   1e-18  -6e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:    1e-28 
+
+Observation number = 17
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+ -7e-18  -1e-17   3e-18  -1e-17   1e-18  -6e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 18
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+ -7e-18  -1e-17   3e-18  -1e-17   1e-18  -6e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 19
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -7e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 20
+Time = 2e+03
+step = -4e-08
+State derive from integration:     
+ -7e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 21
+Time = 2e+03
+step = -4e-08
+State derive from integration:     
+ -7e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -1e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 22
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 23
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 24
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 25
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 26
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 27
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 28
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 29
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 30
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:    1e-28 
+
+Observation number = 31
+Time = 2e+03
+step = 7e-07
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 32
+Time = 2e+03
+step = 7e-07
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 33
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 34
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 35
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+ -8e-18  -2e-17   3e-18  -1e-17   1e-18  -7e-18  -4e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 36
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 37
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 38
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 39
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 40
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 41
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 42
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:    1e-28 
+
+Observation number = 43
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 44
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 45
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 46
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 47
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -9e-18  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -2e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05  0.0008       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 48
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:    1e-28 
+
+Observation number = 49
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 50
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -1e-17   1e-18  -8e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 51
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -8e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 52
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -8e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 53
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -8e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 54
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 55
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 56
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 57
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 58
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   1e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 59
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 60
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 61
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003  0.0006  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 62
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 63
+Time = 2e+03
+step = -4e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 64
+Time = 2e+03
+step = -4e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 65
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 66
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+ 0.0006       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 67
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 68
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 69
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+ -1e-17  -2e-17   4e-18  -2e-17   2e-18  -9e-18  -5e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.001   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 70
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 71
+Time = 2e+03
+step = 5e-07
+State derive from integration:     
+ -1e-17  -2e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 72
+Time = 2e+03
+step = 5e-07
+State derive from integration:     
+ -1e-17  -2e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 73
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -2e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 74
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+ -1e-17  -2e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 75
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+ -1e-17  -2e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -2e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 76
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -3e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 77
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -1e-17  -3e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 78
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -1e-17  -3e-17   5e-18  -2e-17   2e-18  -1e-17  -6e-18  -3e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0 -0.0003       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 79
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -1e-17  -3e-17   6e-18  -2e-17   2e-18  -1e-17  -7e-18  -4e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 80
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+ -1e-17  -3e-17   6e-18  -2e-17   2e-18  -1e-17  -7e-18  -4e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 81
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+ -1e-17  -3e-17   6e-18  -2e-17   2e-18  -1e-17  -7e-18  -4e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0  -7e-05   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 82
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -2e-17  -3e-17   6e-18  -2e-17   2e-18  -1e-17  -8e-18  -4e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0 -0.0001   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 83
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+ -2e-17  -3e-17   6e-18  -2e-17   2e-18  -1e-17  -8e-18  -4e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0 -0.0001   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 84
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+ -2e-17  -3e-17   6e-18  -2e-17   2e-18  -1e-17  -8e-18  -4e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0 -0.0001   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 
+
+Observation number = 85
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+ -2e-17  -3e-17   7e-18  -3e-17   2e-18  -2e-17  -9e-18  -5e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0 -0.0001   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 86
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -2e-17  -3e-17   7e-18  -3e-17   2e-18  -2e-17  -9e-18  -5e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0 -0.0001   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:       2e-47 
+G derive from numerical diff:        0 
+
+Observation number = 87
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+ -2e-17  -3e-17   7e-18  -3e-17   2e-18  -2e-17  -9e-18  -5e-18  -3e-17  -4e-26  -7e-26   1e-26  -5e-26   5e-27  -3e-26  -2e-26  -9e-27  -7e-26 
+State derive from numerical diff:  
+      0       0       0       0 -0.0001   0.001       0       0   0.002   4e-11   9e-11  -2e-11   8e-11  -8e-12   4e-11   1e-11   9e-12   6e-11 
+G derive from integration:      -6e-48 
+G derive from numerical diff:        0 b = 1.994e-33   B = 1.240e-85
+
+
+ITER 2
+
+BH mass = -1.6078977144105485e+52
+
+Observation number = 0
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 1
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 2
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 3
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 4
+Time = 2e+03
+step = -1e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 5
+Time = 2e+03
+step = -1e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 6
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 7
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 8
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 9
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 10
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 11
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 12
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 13
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 14
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 15
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 16
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 17
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 18
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 19
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 20
+Time = 2e+03
+step = -4e-08
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 21
+Time = 2e+03
+step = -4e-08
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 22
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 23
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 24
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 25
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 26
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 27
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 28
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 29
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 30
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 31
+Time = 2e+03
+step = 7e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 32
+Time = 2e+03
+step = 7e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 33
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 34
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 35
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 36
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 37
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 38
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 39
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 40
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 41
+Time = 2e+03
+step = -3e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 42
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 43
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 44
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 45
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 46
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 47
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 48
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 49
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 50
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 51
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 52
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 53
+Time = 2e+03
+step = -2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 54
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 55
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 56
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 57
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 58
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 59
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 60
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 61
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 62
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 63
+Time = 2e+03
+step = -4e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 64
+Time = 2e+03
+step = -4e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 65
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 66
+Time = 2e+03
+step = 2e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 67
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 68
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 69
+Time = 2e+03
+step = 1e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 70
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 71
+Time = 2e+03
+step = 5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 72
+Time = 2e+03
+step = 5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 73
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 74
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 75
+Time = 2e+03
+step = -5e-07
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 76
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 77
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 78
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 79
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 80
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 81
+Time = 2e+03
+step = 3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 82
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 83
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 84
+Time = 2e+03
+step = 4e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 85
+Time = 2e+03
+step = 3e+03
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 86
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan 
+
+Observation number = 87
+Time = 2e+03
+step = -3e-06
+State derive from integration:     
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+State derive from numerical diff:  
+    nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan     nan 
+G derive from integration:         nan 
+G derive from numerical diff:      nan b = nan   B = nan

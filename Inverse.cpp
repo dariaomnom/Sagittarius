@@ -5,8 +5,8 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-//#include <unistd.h>
-#include <Windows.h>
+// #include <unistd.h>
+// #include <Windows.h>
 
 #define ITER
 #define DEBUG
@@ -238,6 +238,10 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		dg(states_num, 0.0),
 		Ak(params_num, 0.0);
 
+				FILE* fp_S2 = fopen("S2_debug.txt", "w");
+				FILE* fp_S38 = fopen("S38_debug.txt", "w");
+				FILE* fp_S55 = fopen("S55_debug.txt", "w");
+
 	for (int i = 0; i < params_num; i++) condition[i] = params[i];
 	for (int i = 0; i < states_num; i++) {
 		condition[i * params_num + i + params_num] = 1.0;
@@ -253,6 +257,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 			RK4_step(condition, bufers, step);
 
 			t += step;
+			fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
+				fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
+				fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
 #ifdef ITER 
 			printf("\nObservation number = %d \nTime = %.3f \nstep = %.3f\n", observ_counter, observations[observ_counter * 6], step);
 #endif
@@ -354,6 +361,9 @@ std::vector<double> Gauss_Newton(std::vector<double>& params, std::vector<double
 		else {
 			RK4_step(condition, bufers, step);
 			t += step;
+			fprintf(fp_S2, "%.3f %.16le %.16le %.16le\n", t / Y, condition[0], condition[1], condition[2]);
+				fprintf(fp_S38, "%.3f %.16le %.16le %.16le\n", t / Y, condition[3], condition[4], condition[5]);
+				fprintf(fp_S55, "%.3f %.16le %.16le %.16le\n", t / Y, condition[6], condition[7], condition[8]);
 		}
 
 	}
@@ -440,7 +450,7 @@ int main() {
 	// }
 	// std::cout << std::endl;
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 1; i++) {
 		printf("BH mass = %.16le\n", params[18]);
 		params = Gauss_Newton(params, observations, bufers);
 		// std::cout << " " << std::endl;
